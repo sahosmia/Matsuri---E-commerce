@@ -7,7 +7,6 @@ class ControllerExtensionModuleInventoryModuleGift extends Controller {
         $this->document->setTitle($this->language->get('heading_title'));
         $this->load->model('extension/module/inventory_module/gift');
 
-        // Ensure table exists (temporary call to install)
         $this->model_extension_module_inventory_module_gift->install();
 
         $this->getList();
@@ -58,14 +57,13 @@ class ControllerExtensionModuleInventoryModuleGift extends Controller {
         $results = $this->model_extension_module_inventory_module_gift->getGifts($filter_data);
 
         foreach ($results as $result) {
+            $items = $this->model_extension_module_inventory_module_gift->getGiftItems($result['product_gift_id']);
+
             $data['gifts'][] = array(
                 'product_gift_id' => $result['product_gift_id'],
                 'gifted_name'     => $result['gifted_name'],
-                'product_name'    => $result['product_name'],
-                'quantity'        => $result['quantity'],
-                'purchase_price'  => $this->currency->format($result['purchase_price'], $this->config->get('config_currency')),
-                'additional_cost' => $this->currency->format($result['additional_cost'], $this->config->get('config_currency')),
-                'gift_date'       => date($this->language->get('date_format_short'), strtotime($result['gift_date']))
+                'gift_date'       => date($this->language->get('date_format_short'), strtotime($result['gift_date'])),
+                'items'           => $items
             );
         }
 
@@ -147,29 +145,6 @@ class ControllerExtensionModuleInventoryModuleGift extends Controller {
             $data['gift_date'] = date('Y-m-d');
         }
 
-        $this->load->model('catalog/product');
-        $this->load->model('tool/image');
-
-        if (isset($this->request->post['products'])) {
-            $products = $this->request->post['products'];
-        } else {
-            $products = array();
-        }
-
-        $data['gift_products'] = array();
-        foreach ($products as $product) {
-            $product_info = $this->model_catalog_product->getProduct($product['product_id']);
-            if ($product_info) {
-                $data['gift_products'][] = array(
-                    'product_id'      => $product['product_id'],
-                    'name'            => $product_info['name'],
-                    'quantity'        => $product['quantity'],
-                    'purchase_price'  => $product['purchase_price'],
-                    'additional_cost' => $product['additional_cost']
-                );
-            }
-        }
-
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
@@ -214,8 +189,29 @@ class ControllerExtensionModuleInventoryModuleGift extends Controller {
             foreach ($results as $result) {
                 $json[] = array(
                     'product_id' => $result['product_id'],
-                    'name'       => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8')),
-                    'price'      => $result['price']
+                    'name'       => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8'))
+                );
+            }
+        }
+
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($json));
+    }
+
+    public function getLots() {
+        $json = array();
+
+        if (isset($this->request->get['product_id'])) {
+            $this->load->model('extension/module/inventory_module/gift');
+            $results = $this->model_extension_module_inventory_module_gift->getProductLots($this->request->get['product_id']);
+
+            foreach ($results as $result) {
+                $json[] = array(
+                    'inventory_details_id' => $result['inventory_details_id'],
+                    'lot_number'           => $result['inventory_lotnumber'],
+                    'quantity'             => $result['current_quantity'],
+                    'purchase_price'       => $result['purchase_price'],
+                    'additional_cost'      => $result['additional_cost']
                 );
             }
         }

@@ -60,6 +60,7 @@
               <thead>
                 <tr>
                   <td class="text-left">{{ column_product }}</td>
+                  <td class="text-left">Lot Number</td>
                   <td class="text-right">{{ column_quantity }}</td>
                   <td class="text-right">{{ column_purchase_price }}</td>
                   <td class="text-right">{{ column_additional_cost }}</td>
@@ -68,27 +69,6 @@
               </thead>
               <tbody>
                 {% set product_row = 0 %}
-                {% for gift_product in gift_products %}
-                <tr id="product-row{{ product_row }}">
-                  <td class="text-left">
-                    <input type="hidden" name="products[{{ product_row }}][product_id]" value="{{ gift_product.product_id }}" />
-                    {{ gift_product.name }}
-                  </td>
-                  <td class="text-right">
-                    <input type="number" name="products[{{ product_row }}][quantity]" value="{{ gift_product.quantity }}" class="form-control" />
-                  </td>
-                  <td class="text-right">
-                    <input type="text" name="products[{{ product_row }}][purchase_price]" value="{{ gift_product.purchase_price }}" class="form-control" />
-                  </td>
-                  <td class="text-right">
-                    <input type="text" name="products[{{ product_row }}][additional_cost]" value="{{ gift_product.additional_cost }}" class="form-control" />
-                  </td>
-                  <td class="text-left">
-                    <button type="button" onclick="$('#product-row{{ product_row }}').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button>
-                  </td>
-                </tr>
-                {% set product_row = product_row + 1 %}
-                {% endfor %}
               </tbody>
             </table>
           </div>
@@ -109,8 +89,7 @@ $('input[name=\'product\']').autocomplete({
 				response($.map(json, function(item) {
 					return {
 						label: item['name'],
-						value: item['product_id'],
-            price: item['price']
+						value: item['product_id']
 					}
 				}));
 			}
@@ -119,18 +98,43 @@ $('input[name=\'product\']').autocomplete({
 	'select': function(item) {
 		$('input[name=\'product\']').val('');
 
-		html  = '<tr id="product-row' + product_row + '">';
-		html += '  <td class="text-left"><input type="hidden" name="products[' + product_row + '][product_id]" value="' + item['value'] + '" />' + item['label'] + '</td>';
-		html += '  <td class="text-right"><input type="number" name="products[' + product_row + '][quantity]" value="1" class="form-control" /></td>';
-		html += '  <td class="text-right"><input type="text" name="products[' + product_row + '][purchase_price]" value="' + item['price'] + '" class="form-control" /></td>';
-		html += '  <td class="text-right"><input type="text" name="products[' + product_row + '][additional_cost]" value="0.00" class="form-control" /></td>';
-		html += '  <td class="text-left"><button type="button" onclick="$(\'#product-row' + product_row + '\').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
-		html += '</tr>';
+    var product_id = item['value'];
+    var product_name = item['label'];
 
-		$('#product-grid tbody').append(html);
+    $.ajax({
+      url: 'index.php?route=extension/module/inventory_module/gift/getLots&user_token={{ user_token }}&product_id=' + product_id,
+      dataType: 'json',
+      success: function(json) {
+        if (json.length > 0) {
+          html  = '<tr id="product-row' + product_row + '">';
+          html += '  <td class="text-left"><input type="hidden" name="products[' + product_row + '][product_id]" value="' + product_id + '" />' + product_name + '</td>';
+          html += '  <td class="text-left"><select name="products[' + product_row + '][inventory_details_id]" class="form-control lot-select" data-row="' + product_row + '">';
+          $.each(json, function(i, lot) {
+            html += '    <option value="' + lot['inventory_details_id'] + '" data-price="' + lot['purchase_price'] + '" data-additional="' + lot['additional_cost'] + '" data-max="' + lot['quantity'] + '">' + lot['lot_number'] + ' (Available: ' + lot['quantity'] + ')</option>';
+          });
+          html += '  </select></td>';
+          html += '  <td class="text-right"><input type="number" name="products[' + product_row + '][quantity]" value="1" class="form-control qty-input" min="1" /></td>';
+          html += '  <td class="text-right"><input type="text" name="products[' + product_row + '][purchase_price]" value="' + json[0]['purchase_price'] + '" class="form-control" readonly /></td>';
+          html += '  <td class="text-right"><input type="text" name="products[' + product_row + '][additional_cost]" value="' + json[0]['additional_cost'] + '" class="form-control" readonly /></td>';
+          html += '  <td class="text-left"><button type="button" onclick="$(\'#product-row' + product_row + '\').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+          html += '</tr>';
 
-		product_row++;
+          $('#product-grid tbody').append(html);
+          product_row++;
+        } else {
+          alert('No available stock found for this product.');
+        }
+      }
+    });
 	}
+});
+
+$(document).delegate('.lot-select', 'change', function() {
+  var row = $(this).data('row');
+  var selected = $(this).find('option:selected');
+  $('input[name="products[' + row + '][purchase_price]"]').val(selected.data('price'));
+  $('input[name="products[' + row + '][additional_cost]"]').val(selected.data('additional'));
+  $('input[name="products[' + row + '][quantity]"]').attr('max', selected.data('max'));
 });
 
 $('.date').datetimepicker({

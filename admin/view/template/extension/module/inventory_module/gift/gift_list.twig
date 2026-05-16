@@ -31,7 +31,7 @@
               </div>
             </div>
             <div class="col-sm-4">
-              <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> {{ button_filter }}</button>
+              <button type="button" id="button-filter" class="btn btn-primary pull-right"><i class="fa fa-filter"></i> Filter</button>
             </div>
           </div>
         </div>
@@ -39,29 +39,46 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <td class="text-left">{{ column_gifted_name }}</td>
-                <td class="text-left">{{ column_product }}</td>
-                <td class="text-right">{{ column_quantity }}</td>
-                <td class="text-right">{{ column_purchase_price }}</td>
-                <td class="text-right">{{ column_additional_cost }}</td>
-                <td class="text-left">{{ column_gift_date }}</td>
+                <td class="text-left">Gifted Person</td>
+                <td class="text-left">Gift Date</td>
+                <td class="text-left">Details</td>
               </tr>
             </thead>
             <tbody>
               {% if gifts %}
               {% for gift in gifts %}
               <tr>
-                <td class="text-left">{{ gift.gifted_name }}</td>
-                <td class="text-left">{{ gift.product_name }}</td>
-                <td class="text-right">{{ gift.quantity }}</td>
-                <td class="text-right">{{ gift.purchase_price }}</td>
-                <td class="text-right">{{ gift.additional_cost }}</td>
+                <td class="text-left"><strong>{{ gift.gifted_name }}</strong></td>
                 <td class="text-left">{{ gift.gift_date }}</td>
+                <td class="text-left">
+                  <table class="table table-condensed">
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Lot</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Add. Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for item in gift.items %}
+                      <tr>
+                        <td>{{ item.product_name }}</td>
+                        <td>{{ item.inventory_lotnumber }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.purchase_price }}</td>
+                        <td>{{ item.additional_cost }}</td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </td>
               </tr>
               {% endfor %}
               {% else %}
               <tr>
-                <td class="text-center" colspan="6">{{ text_no_results }}</td>
+                <td class="text-center" colspan="3">{{ text_no_results }}</td>
               </tr>
               {% endif %}
             </tbody>
