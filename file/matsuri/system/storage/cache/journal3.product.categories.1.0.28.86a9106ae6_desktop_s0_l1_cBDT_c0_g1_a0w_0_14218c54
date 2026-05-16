@@ -1,0 +1,23 @@
+<?php $val = array (
+  'category_id' => '28',
+  'parent_id' => '0',
+  'title' => 'Serum',
+  'items' => 
+  array (
+  ),
+  'classes' => 
+  array (
+    0 => 'menu-item menu-item-c28',
+    'dropdown' => 
+    array (
+    ),
+  ),
+  'link' => 
+  array (
+    'href' => 'http://localhost/matsuri/serum',
+    'total' => NULL,
+    'classes' => 
+    array (
+    ),
+  ),
+);

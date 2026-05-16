@@ -1,0 +1,23 @@
+<?php $val = array (
+  'category_id' => '18',
+  'parent_id' => '0',
+  'title' => 'Toner &amp; Lotion',
+  'items' => 
+  array (
+  ),
+  'classes' => 
+  array (
+    0 => 'menu-item menu-item-c18',
+    'dropdown' => 
+    array (
+    ),
+  ),
+  'link' => 
+  array (
+    'href' => 'http://localhost/matsuri/toner-and-lotion',
+    'total' => NULL,
+    'classes' => 
+    array (
+    ),
+  ),
+);

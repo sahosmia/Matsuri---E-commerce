@@ -1,0 +1,23 @@
+<?php $val = array (
+  'category_id' => '63',
+  'parent_id' => '0',
+  'title' => 'Daiso',
+  'items' => 
+  array (
+  ),
+  'classes' => 
+  array (
+    0 => 'menu-item menu-item-c63',
+    'dropdown' => 
+    array (
+    ),
+  ),
+  'link' => 
+  array (
+    'href' => 'http://localhost/matsuri/daiso',
+    'total' => NULL,
+    'classes' => 
+    array (
+    ),
+  ),
+);

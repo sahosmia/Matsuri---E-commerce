@@ -1,0 +1,240 @@
+<?php $val = array (
+  'css' => '.module-banners-417 .title.module-title{font-family:\'Roboto\';font-weight:700;font-size:20px;color:rgba(8, 22, 33, 1);text-align:left;text-transform:capitalize;background:rgba(255, 255, 255, 1);border-style:none}.module-banners-417 .module-item.swiper-slide{margin-right:10px;width:calc((100% - 2 * 10px) / 3 - 0.01px)}.module-banners-417 .module-item:not(.swiper-slide){padding:5px;width:calc(100% / 3 - 0.01px)}.one-column #content .module-banners-417 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.one-column #content .module-banners-417 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.two-column #content .module-banners-417 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.two-column #content .module-banners-417 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.side-column .module-banners-417 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.side-column .module-banners-417 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.module-banners-417 a
+img{transform:scale(1)}.module-banners-417 .module-item>a{border-width:1px;border-style:solid;border-color:rgba(238, 238, 238, 0.2);border-radius:12px}.module-banners-417 .module-item>a::after{content:none !important}.module-banners-417 a .banner-caption{visibility:visible;opacity:1;display:block;width:100%}.module-banners-417 .banner-caption span::after{content:\'\\e5c8\' !important;font-family:icomoon !important}.module-banners-417 .banner-caption{top:50%;left:50%;right:auto;bottom:auto;transform:translate3d(-50%, -50%, 0)}.module-banners-417 .banner-caption
+span{white-space:normal;;font-family:\'Roboto\';font-weight:700;font-size:32px;color:rgba(0, 0, 0, 1);text-align:center;text-transform:capitalize;padding:12px}.module-banners-417 .banner-caption-2
+span{white-space:normal}.module-banners-417 .banner-caption-3
+span{white-space:normal}@media (max-width: 1024px){.module-banners-417 .module-item.swiper-slide{margin-right:10px;width:calc((100% - 2 * 10px) / 3 - 0.01px)}.module-banners-417 .module-item:not(.swiper-slide){padding:5px;width:calc(100% / 3 - 0.01px)}}@media (max-width: 470px){.module-banners-417 .module-item.swiper-slide{margin-right:10px;width:calc((100% - 0 * 10px) / 1 - 0.01px)}.module-banners-417 .module-item:not(.swiper-slide){padding:5px;width:calc(100% / 1 - 0.01px)}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        700 => '700',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'title' => '',
+    'carousel' => true,
+    'itemsPerRow' => 
+    array (
+      'c0' => 
+      array (
+        0 => 
+        array (
+          'items' => 3,
+          'spacing' => 10,
+        ),
+        1024 => 
+        array (
+          'items' => 3,
+          'spacing' => 10,
+        ),
+        470 => 
+        array (
+          'items' => 1,
+          'spacing' => 10,
+        ),
+      ),
+      'c1' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'c2' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'sc' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+    ),
+    'imageDimensions' => 
+    array (
+      'width' => 418,
+      'height' => 418,
+      'resize' => 'fill',
+    ),
+    'lazyLoad' => false,
+    'status' => true,
+    'id' => 'banners-69e79c48becb2',
+    'module_id' => 417,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-banners',
+      2 => 'module-banners-417',
+      'carousel-mode' => true,
+    ),
+    'carouselOptions' => 
+    array (
+      'speed' => 0,
+      'autoplay' => false,
+      'pauseOnHover' => false,
+      'loop' => false,
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => '',
+        'title2' => '',
+        'title3' => '',
+        'alt' => 'Gigabyte All Product',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'id' => '417-1',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-1',
+          'swiper-slide' => true,
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/catalog/website/home-banner/makeup-web-418x418.png',
+        'image2x' => 'http://localhost/matsuri/image/cache/catalog/website/home-banner/makeup-web-836x836.png',
+        'text' => NULL,
+        'items' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'title' => '',
+        'title2' => '',
+        'title3' => '',
+        'alt' => 'Gigabyte All Product',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'id' => '417-2',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-2',
+          'swiper-slide' => true,
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/catalog/website/home-banner/t-beauty-418x418.png',
+        'image2x' => 'http://localhost/matsuri/image/cache/catalog/website/home-banner/t-beauty-836x836.png',
+        'text' => NULL,
+        'items' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'title' => '',
+        'title2' => '',
+        'title3' => '',
+        'alt' => 'Gigabyte All Product',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'id' => '417-3',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-3',
+          'swiper-slide' => true,
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/catalog/website/home-banner/under-1k-418x418.png',
+        'image2x' => 'http://localhost/matsuri/image/cache/catalog/website/home-banner/under-1k-836x836.png',
+        'text' => NULL,
+        'items' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'title' => '',
+        'title2' => '',
+        'title3' => '',
+        'alt' => 'Gigabyte All Product',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'id' => '417-4',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-4',
+          'swiper-slide' => true,
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/catalog/website/home-banner/j-beauty-418x418.png',
+        'image2x' => 'http://localhost/matsuri/image/cache/catalog/website/home-banner/j-beauty-836x836.png',
+        'text' => NULL,
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

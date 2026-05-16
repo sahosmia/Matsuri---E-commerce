@@ -1,0 +1,43 @@
+<?php $val = array (
+  'css' => '.module-title-403 .title-wrapper
+h3{font-family:\'Roboto\';font-weight:400;font-size:14px;color:rgba(0, 0, 0, 1)}.module-title-403 .title-wrapper
+.subtitle{font-family:\'Roboto\';font-weight:400;font-size:14px;color:rgba(0, 0, 0, 1)}.module-title-403 .title-wrapper::before{opacity:.05;display:block}@media (max-width: 470px){.module-title-403 .title-wrapper{text-align:center}.module-title-403 .title-divider{margin-left:auto;margin-right:auto}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'type' => 'custom',
+    'title' => 'We Accepts',
+    'subtitle' => '',
+    'status' => true,
+    'id' => 'title-69e79e2047137',
+    'module_id' => 403,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-title',
+      2 => 'module-title-403',
+    ),
+    'items' => 
+    array (
+    ),
+  ),
+);

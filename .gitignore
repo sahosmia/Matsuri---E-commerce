@@ -1,0 +1,56 @@
+# =====================================================================
+# OpenCart Configuration Files
+# Do NOT upload your database credentials and local paths to GitHub
+# =====================================================================
+config.php
+admin/config.php
+
+# If you have an installation folder, ignore it after installation
+upload/install/
+install/
+
+# =====================================================================
+# OpenCart Cache & Temporary Files
+# =====================================================================
+system/storage/cache/
+system/storage/logs/
+system/storage/session/
+system/storage/upload/
+
+# If your storage folder is inside the system directory
+system/storage/download/
+system/storage/modification/
+
+# If your storage folder is moved outside the web root (Recommended for Security)
+# Add that specific storage path here, for example:
+# ../storage/
+
+# =====================================================================
+# Images and Uploads (Keep the directory, ignore the cached images)
+# =====================================================================
+image/cache/
+image/catalog/tmp/
+
+# Optional: If you don't want to upload your product images to GitHub
+# image/catalog/
+
+# =====================================================================
+# Server & Environment Files
+# =====================================================================
+.env
+.htaccess
+php.ini
+.user.ini
+
+# =====================================================================
+# Operating System & IDE Files
+# =====================================================================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp

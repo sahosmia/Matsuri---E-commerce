@@ -1,0 +1,526 @@
+<?php $val = array (
+  'css' => '.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-1.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-1 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-1>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-1.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-2.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-2 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-2>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-2.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}div.main-menu.main-menu-3 > .j-menu li.main-menu-item-3>a{font-size:14px !important}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-3.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-3 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-3>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-3.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-4.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-4 .mega-menu-content{width:230px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-4>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-4:not(.mega-fullwidth)>.dropdown-menu::before{display:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-4.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.main-menu-3 > .j-menu li.main-menu-item-4 .mega-menu-content{background:rgba(8, 42, 67, 1)}.desktop .main-menu-3 > .j-menu li.main-menu-item-4 .mega-menu-content{border-width:0;border-top-width:2px;border-style:solid;border-color:rgba(239, 74, 35, 1);border-style:none}.main-menu-3 > .j-menu li.main-menu-item-4 .j-dropdown>.mega-menu-content{box-shadow:0 0 5px 1px rgba(0, 0, 0, 0.07);max-height:500px !important;overflow-y:auto}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-5.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-5 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-5>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-5.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-6.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-6 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-6>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-6.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-7.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-7 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-7>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-7.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-8.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-8 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-8>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-8.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-9.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-9 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-9>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-9.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-10.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-10 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-10>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-10.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-11.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-11 .mega-menu-content{width:230px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-11>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-11.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}.route-common-home body:not(.is-sticky) .main-menu-3 .main-menu-item-12.flyout>.j-dropdown{display:block !important;transform:none;opacity:1}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-12 .mega-menu-content{width:500px;position:relative;left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 .mega-custom.main-menu-item-12>.dropdown-menu::before{left:0;transform:none}.desktop-main-menu-wrapper .main-menu-3 > .j-menu li.main-menu-item-12.multi-level .dropdown-menu ul li .dropdown-menu{left:100%}',
+  'fonts' => 
+  array (
+  ),
+  'settings' => 
+  array (
+    'status' => true,
+    'id' => 'main-menu',
+    'module_id' => 3,
+    'classes' => 
+    array (
+      0 => 'main-menu',
+      1 => 'main-menu-3',
+      'accordion-menu' => false,
+    ),
+    'display' => 'dropdown',
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => 'Sun Screen',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '67',
+          'href' => 'http://localhost/matsuri/sun-screen',
+          'name' => 'Sun Screen',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-1',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      2 => 
+      array (
+        'title' => 'Facewash / Cleanser',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '64',
+          'href' => 'http://localhost/matsuri/facewash-cleanser',
+          'name' => 'Facewash / Cleanser',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-2',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      3 => 
+      array (
+        'title' => 'Toner & Lotion',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '18',
+          'href' => 'http://localhost/matsuri/toner-and-lotion',
+          'name' => 'Toner &amp; Lotion',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-3',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      4 => 
+      array (
+        'title' => 'Moisturizer & Acne care',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '20',
+          'href' => 'http://localhost/matsuri/moisturizer-and-acne-care',
+          'name' => 'Moisturizer &amp; Acne care',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-4',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      5 => 
+      array (
+        'title' => 'Serum',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '28',
+          'href' => 'http://localhost/matsuri/serum',
+          'name' => 'Serum',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-5',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      6 => 
+      array (
+        'title' => 'Exfoliator & Scrub',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '68',
+          'href' => 'http://localhost/matsuri/exfoliator-and-scrub',
+          'name' => 'Exfoliator &amp; Scrub',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-6',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      7 => 
+      array (
+        'title' => 'Eye Care',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '25',
+          'href' => 'http://localhost/matsuri/eye-care',
+          'name' => 'Eye Care',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-7',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      8 => 
+      array (
+        'title' => 'Hair Care',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '33',
+          'href' => 'http://localhost/matsuri/hair-care',
+          'name' => 'Hair Care',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-8',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      9 => 
+      array (
+        'title' => 'Lip Care',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '70',
+          'href' => 'http://localhost/matsuri/lip-care',
+          'name' => 'Lip Care',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-9',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      10 => 
+      array (
+        'title' => 'Make Up Items',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '61',
+          'href' => 'http://localhost/matsuri/make-up-items',
+          'name' => 'Make Up Items',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-10',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      11 => 
+      array (
+        'title' => 'Men\'s Care',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '69',
+          'href' => 'http://localhost/matsuri/mens-care',
+          'name' => 'Men\'s Care',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-11',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+      12 => 
+      array (
+        'title' => 'Daiso',
+        'label' => '',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '63',
+          'href' => 'http://localhost/matsuri/daiso',
+          'name' => 'Daiso',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'multilevel',
+        'mobileOpen' => false,
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'main-menu-item',
+          2 => 'main-menu-item-12',
+          'multi-level' => true,
+          'dropdown' => false,
+          'drop-menu' => 
+          array (
+            0 => false,
+            1 => true,
+          ),
+          'icon-only' => false,
+          'menu-fullwidth' => false,
+          'mega-fullwidth' => false,
+          'mega-custom' => false,
+        ),
+        'items' => 
+        array (
+        ),
+        'isOpen' => false,
+      ),
+    ),
+  ),
+);

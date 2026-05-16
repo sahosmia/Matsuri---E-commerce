@@ -1,0 +1,181 @@
+<?php $val = array (
+  'css' => '.icons-menu-61 .title.module-title{font-family:\'Roboto\';font-weight:400;font-size:14px;color:rgba(255, 255, 255, 1);letter-spacing:4px;margin-top:10px}.icons-menu-61 .title.module-title::after{display:none}.icons-menu-61 .title.module-title.page-title>span::after{display:none}.icons-menu-61
+a{background:rgba(0, 0, 0, 0);width:40px;height:40px}.desktop .icons-menu-61 a:hover{background:rgba(0, 0, 0, 0)}.icons-menu-61 a:active{background:rgba(0, 0, 0, 0)}.icons-menu-61 a::before{color:rgba(0, 0, 0, 1);font-size:24px}.icons-menu-61 .menu-item
+a{border-radius:50%}.desktop .icons-menu-61 a:hover::before{color:rgba(0,0,0,1)}.icons-menu-61>ul{margin-top:8px;margin-left:-10px}.icons-menu-61 .links-text{white-space:normal;overflow:visible;text-overflow:ellipsis;display:none}.icons-menu-61>ul>.icons-menu-item{padding:calc(10px / 2)}.icons-menu-tooltip-61 .tooltip-inner{font-family:\'Roboto\';font-weight:400;color:rgba(242, 244, 248, 1);background:rgba(233, 25, 34, 1)}.icons-menu-tooltip-61.tooltip.top .tooltip-arrow{border-top-color:rgba(233, 25, 34, 1)}.icons-menu-tooltip-61.tooltip.right .tooltip-arrow{border-right-color:rgba(233, 25, 34, 1)}.icons-menu-tooltip-61.tooltip.bottom .tooltip-arrow{border-bottom-color:rgba(233, 25, 34, 1)}.icons-menu-tooltip-61.tooltip.left .tooltip-arrow{border-left-color:rgba(233, 25, 34, 1)}.icons-menu-61 .count-badge{color:rgba(255, 255, 255, 1);background:rgba(233, 25, 34, 1);border-radius:10px}.desktop .icons-menu-61 a:hover .count-badge{background:rgba(233, 25, 34, 1) !important}.icons-menu-61
+ul{justify-content:flex-start}.icons-menu-61 .module-title{text-align:left}.icons-menu-61 .module-title::after{left:0;right:auto;transform:none}@media (max-width: 470px){.icons-menu-61 .title.module-title{text-align:center}.icons-menu-61 .title.module-title::after{left:50%;right:initial;transform:translate3d(-50%,0,0)}.icons-menu-61 .title.module-title.page-title>span::after{left:50%;right:initial;transform:translate3d(-50%,0,0)}.icons-menu-61>ul{margin:15px}.icons-menu-61
+ul{justify-content:center}.icons-menu-61 .module-title{text-align:center}.icons-menu-61 .module-title::after{left:50%;right:auto;transform:translate3d(-50%,0,0)}}.icons-menu-61 .icons-menu-item-1.icon-menu-icon>a::before{content:\'\\e9cf\' !important;font-family:icomoon !important;color:rgba(39, 124, 217, 1)}.icons-menu-61 .icons-menu-item-1.icon-menu-icon .count-badge{color:rgba(255, 255, 255, 1);background:rgba(233, 25, 34, 1);border-radius:10px}.desktop .icons-menu-61 .icons-menu-item-1.icon-menu-icon a:hover .count-badge{background:rgba(233, 25, 34, 1) !important}.icons-menu-61 .icons-menu-item-2.icon-menu-icon>a::before{content:\'\\e9d0\' !important;font-family:icomoon !important;color:rgba(233, 25, 34, 1)}.icons-menu-61 .icons-menu-item-2.icon-menu-icon .count-badge{color:rgba(255, 255, 255, 1);background:rgba(233, 25, 34, 1);border-radius:10px}.desktop .icons-menu-61 .icons-menu-item-2.icon-menu-icon a:hover .count-badge{background:rgba(233, 25, 34, 1) !important}.icons-menu-61 .icons-menu-item-3.icon-menu-icon>a::before{content:\'\\f16d\' !important;font-family:icomoon !important;color:rgba(233, 25, 34, 1)}.icons-menu-61 .icons-menu-item-3.icon-menu-icon .count-badge{color:rgba(255, 255, 255, 1);background:rgba(233, 25, 34, 1);border-radius:10px}.desktop .icons-menu-61 .icons-menu-item-3.icon-menu-icon a:hover .count-badge{background:rgba(233, 25, 34, 1) !important}.icons-menu-61 .icons-menu-item-4.icon-menu-icon>a::before{content:\'\\f232\' !important;font-family:icomoon !important;color:rgba(0, 186, 102, 1)}.icons-menu-61 .icons-menu-item-4.icon-menu-icon .count-badge{color:rgba(255, 255, 255, 1);background:rgba(233, 25, 34, 1);border-radius:10px}.desktop .icons-menu-61 .icons-menu-item-4.icon-menu-icon a:hover .count-badge{background:rgba(233, 25, 34, 1) !important}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'title' => '',
+    'tooltipStatus' => true,
+    'tooltipPosition' => 'top',
+    'imageDimensions' => 
+    array (
+      'width' => NULL,
+      'height' => NULL,
+      'resize' => 'fill',
+    ),
+    'status' => true,
+    'id' => 'icons-menu-69e79c4938275',
+    'module_id' => 61,
+    'classes' => 
+    array (
+      0 => 'icons-menu',
+      1 => 'icons-menu-61',
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => 'Facebook',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+            'target' => 'target="_blank"',
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-1',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'title' => 'YouTube',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+            'target' => 'target="_blank"',
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-2',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'title' => 'Instagram',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+            'target' => 'target="_blank"',
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-3',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      4 => 
+      array (
+        'title' => 'Whatsapp',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => '#',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'icons-menu-item',
+          2 => 'icons-menu-item-4',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          3 => 'icon-menu-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

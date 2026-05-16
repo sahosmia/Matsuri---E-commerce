@@ -1,0 +1,23 @@
+<?php $val = array (
+  'category_id' => '67',
+  'parent_id' => '0',
+  'title' => 'Sun Screen',
+  'items' => 
+  array (
+  ),
+  'classes' => 
+  array (
+    0 => 'menu-item menu-item-c67',
+    'dropdown' => 
+    array (
+    ),
+  ),
+  'link' => 
+  array (
+    'href' => 'http://localhost/matsuri/sun-screen',
+    'total' => NULL,
+    'classes' => 
+    array (
+    ),
+  ),
+);

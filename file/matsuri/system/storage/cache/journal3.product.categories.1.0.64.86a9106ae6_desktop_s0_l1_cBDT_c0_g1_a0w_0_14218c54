@@ -1,0 +1,23 @@
+<?php $val = array (
+  'category_id' => '64',
+  'parent_id' => '0',
+  'title' => 'Facewash / Cleanser',
+  'items' => 
+  array (
+  ),
+  'classes' => 
+  array (
+    0 => 'menu-item menu-item-c64',
+    'dropdown' => 
+    array (
+    ),
+  ),
+  'link' => 
+  array (
+    'href' => 'http://localhost/matsuri/facewash-cleanser',
+    'total' => NULL,
+    'classes' => 
+    array (
+    ),
+  ),
+);

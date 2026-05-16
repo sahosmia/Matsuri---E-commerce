@@ -1,0 +1,71 @@
+<?php $val = array (
+  'css' => 'div.links-menu-77 .title.module-title{font-size:12px;color:rgba(153, 153, 153, 1);text-align:center}div.links-menu-77 .title.module-title::after{left:50%;right:initial;transform:translate3d(-50%,0,0)}div.links-menu-77 .module-body{padding:15px;padding-left:0px;display:flex;flex-direction:row;justify-content:flex-start;;-webkit-overflow-scrolling:touch}div.links-menu-77 .menu-item{border-width:0 0 0 1px;flex-grow:0;justify-content:center}div.links-menu-77 .menu-item a .links-text{white-space:nowrap;font-family:\'Roboto\';font-weight:400;font-size:12px;color:rgba(102, 102, 102, 1)}div.links-menu-77 .menu-item
+a{justify-content:center}.phone footer  div.links-menu-77 .module-title::before{display:none}.phone footer  div.links-menu-77 .module-title+.module-body>li{display:flex}@media (max-width: 470px){div.links-menu-77 .module-body{padding:5px;justify-content:center}div.links-menu-77 .menu-item{flex-grow:0}}div.links-menu-77 .links-menu-item-1 a .links-text{font-family:\'Roboto\';font-weight:400;font-size:12px;color:rgba(102, 102, 102, 1);text-align:left}@media (max-width: 760px){div.links-menu-77 .links-menu-item-1
+a{padding-right:15px;padding-left:15px}}@media (max-width: 470px){div.links-menu-77 .links-menu-item-1 a .links-text{text-align:center}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'title' => '',
+    'status' => true,
+    'id' => 'links-menu-69e79e204958e',
+    'module_id' => 77,
+    'classes' => 
+    array (
+      0 => 'links-menu',
+      1 => 'links-menu-77',
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => '©2026 Matsuri | All rights reserved',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'label' => '',
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'links-menu-item',
+          2 => 'links-menu-item-1',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

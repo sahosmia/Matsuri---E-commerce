@@ -1,0 +1,128 @@
+<?php $val = array (
+  'css' => '.module-banners-315 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.module-banners-315 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.one-column #content .module-banners-315 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.one-column #content .module-banners-315 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.two-column #content .module-banners-315 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.two-column #content .module-banners-315 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.side-column .module-banners-315 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.side-column .module-banners-315 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.module-banners-315:not(.carousel-mode) .module-body{margin:-15px}.module-banners-315 a
+img{transform:scale(1)}.module-banners-315 .module-item>a{background:none}.module-banners-315 .module-item>a::before{background:none}.module-banners-315 .module-item>a::after{content:\'\\e5c8\' !important;font-family:icomoon !important;margin-left:20px;top:50%;left:50%;right:auto;bottom:auto;transform:translate3d(-50%, -50%, 0)}.module-banners-315 .banner-caption{visibility:hidden;opacity:0;display:block;top:50%;left:50%;right:auto;bottom:auto;transform:translate3d(-50%, -50%, 0)}.desktop .module-banners-315 a:hover .banner-caption{visibility:visible;opacity:1}.module-banners-315 a .banner-caption{width:100%}.module-banners-315 .banner-caption
+span{white-space:normal;;font-family:\'Roboto\';font-weight:400;font-size:15px;color:rgba(255, 255, 255, 1);text-align:center;text-transform:capitalize;margin-right:50px;padding:12px}.module-banners-315 .banner-caption-2
+span{white-space:normal}.module-banners-315 .banner-caption-3
+span{white-space:normal}.module-banners-315 .module-item-1>a::after{content:none !important}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'title' => '',
+    'carousel' => false,
+    'itemsPerRow' => 
+    array (
+      'c0' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'c1' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'c2' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'sc' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+    ),
+    'imageDimensions' => 
+    array (
+      'width' => 335,
+      'height' => 62,
+      'resize' => 'fit',
+    ),
+    'lazyLoad' => false,
+    'status' => true,
+    'id' => 'banners-69e79e2047967',
+    'module_id' => 315,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-banners',
+      2 => 'module-banners-315',
+      'carousel-mode' => false,
+    ),
+    'carouselOptions' => 
+    array (
+      'speed' => 0,
+      'autoplay' => false,
+      'pauseOnHover' => false,
+      'loop' => false,
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => '',
+        'title2' => '',
+        'title3' => '',
+        'alt' => 'pay_with_desktop',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'id' => '315-1',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-1',
+          'swiper-slide' => false,
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/catalog/website/payment-option/payment-335x62w.png',
+        'image2x' => 'http://localhost/matsuri/image/cache/catalog/website/payment-option/payment-670x124w.png',
+        'text' => NULL,
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

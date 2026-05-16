@@ -1,0 +1,183 @@
+<?php $val = array (
+  'css' => '.module-blocks-241.blocks-grid .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.module-blocks-241.blocks-grid .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.one-column #content .module-blocks-241.blocks-grid .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.one-column #content .module-blocks-241.blocks-grid .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.two-column #content .module-blocks-241.blocks-grid .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.two-column #content .module-blocks-241.blocks-grid .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.side-column .module-blocks-241.blocks-grid .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.side-column .module-blocks-241.blocks-grid .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.module-blocks-241 .block-body{padding-top:40px;padding-bottom:80px;display:flex;flex-direction:column}.module-blocks-241 .block-title{order:-2}.module-blocks-241 .block-header{display:flex;float:none;order:-1;justify-content:flex-start;align-items:flex-start}.module-blocks-241 .block-header
+img{display:flex}.module-blocks-241 .block-wrapper{display:flex;text-align:center;justify-content:center}.module-blocks-241 .block-header
+i{float:none;display:flex}@media (max-width: 470px){.module-blocks-241 .block-body{padding-right:15px;padding-left:15px}}.module-blocks-241 .module-item-1 .block-body{line-height:1.3;display:block}.module-blocks-241 .module-item-1 .block-body .block-content{color:rgba(0, 0, 0, 1);text-align:justify}.module-blocks-241 .module-item-1 .module-title{font-family:\'Roboto\';font-weight:700;font-size:20px;text-align:center;text-transform:capitalize}.module-blocks-241 .module-item-1 .block-header{display:block;float:left;;justify-content:flex-start;align-items:flex-start}.module-blocks-241 .module-item-1 .block-header
+img{display:flex}.module-blocks-241 .module-item-1 .block-wrapper{display:block;justify-content:center}.module-blocks-241 .module-item-1 .block-header
+i{float:left;display:flex}.module-blocks-241 .module-item-1 .block-content{text-align:left;column-count:initial;column-gap:20px;column-rule-width:1px;column-rule-style:solid;font-family:\'Roboto\';font-weight:400;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}.module-blocks-241 .module-item-1 .expand-content{overflow:hidden;max-height:250px}.module-blocks-241 .module-item-1 .block-expand.btn, .module-blocks-241 .module-item-1 .block-expand.btn:visited{font-family:\'Roboto\';font-weight:400;font-size:17px;color:rgba(233, 25, 34, 1);text-transform:capitalize}.module-blocks-241 .module-item-1 .block-expand.btn:hover{color:rgba(233, 25, 34, 1) !important;background:rgba(0, 0, 0, 0) !important}.module-blocks-241 .module-item-1 .block-expand.btn:active, .module-blocks-241 .module-item-1 .block-expand.btn:hover:active, .module-blocks-241 .module-item-1 .block-expand.btn:focus:active{color:rgba(233, 25, 34, 1) !important;background:rgba(0, 0, 0, 0) !important}.module-blocks-241 .module-item-1 .block-expand.btn{background:rgba(0, 0, 0, 0);padding:0px}.module-blocks-241 .module-item-1 .block-expand.btn:focus{background:rgba(0, 0, 0, 0)}.desktop .module-blocks-241 .module-item-1 .block-expand.btn:hover{box-shadow:none}.module-blocks-241 .module-item-1 .block-expand.btn.btn.disabled::after{font-size:20px}.module-blocks-241 .module-item-1 .block-expand::after{content:\'Read more\'}.module-blocks-241 .module-item-1 .block-expanded .block-expand::after{content:\'Show Less\'}.module-blocks-241 .module-item-1 .block-expand::before{content:none !important}.module-blocks-241 .module-item-1 .block-expanded .block-expand::before{content:none !important}.module-blocks-241 .module-item-1 .block-expand-overlay{background:linear-gradient(to bottom, transparent, rgba(255, 255, 255, 1))}.safari .module-blocks-241 .module-item-1 .block-expand-overlay{background:linear-gradient(to bottom, rgba(255,255,255,0), rgba(255, 255, 255, 1))}.iphone .module-blocks-241 .module-item-1 .block-expand-overlay{background:linear-gradient(to bottom, rgba(255,255,255,0), rgba(255, 255, 255, 1))}.ipad .module-blocks-241 .module-item-1 .block-expand-overlay{background:linear-gradient(to bottom, rgba(255,255,255,0), rgba(255, 255, 255, 1))}.module-blocks-241 .module-item-1 .block-footer{margin-top:20px;text-align:center}.module-blocks-241 .module-item-1 .block-footer
+.btn{width:auto;background:rgba(239, 74, 35, 1);transform:scale(calc(100 / 100));transform-origin:center}.module-blocks-241 .module-item-1 .block-footer .btn, .module-blocks-241 .module-item-1 .block-footer .btn:visited{color:rgba(255, 255, 255, 1)}.module-blocks-241 .module-item-1 .block-footer .btn:hover{background:rgba(233, 25, 34, 1) !important}.module-blocks-241 .module-item-1 .block-footer .btn.btn.disabled::after{font-size:20px}.module-blocks-241 .module-item-1 .block-footer .btn::after{content:\'\\e5c8\' !important;font-family:icomoon !important}.module-blocks-241 .module-item-1 .block-content
+a{color:rgba(8, 22, 33, 1);display:inline-block}.module-blocks-241 .module-item-1 .block-content a:hover{color:rgba(235, 102, 38, 1)}.module-blocks-241 .module-item-1 .block-content
+p{font-size:15px;margin-bottom:15px}.module-blocks-241 .module-item-1 .block-content
+h1{font-family:\'Roboto\';font-weight:400;font-size:28px;color:rgba(0, 0, 0, 1);padding-top:20px;margin-bottom:20px}.module-blocks-241 .module-item-1 .block-content
+h2{font-family:\'Roboto\';font-weight:400;font-size:26px;color:rgba(0, 0, 0, 1);padding-top:15px;margin-bottom:15px}.module-blocks-241 .module-item-1 .block-content
+h3{font-family:\'Roboto\';font-weight:400;font-size:22px;color:rgba(0, 0, 0, 1);padding-top:15px;margin-bottom:15px}.module-blocks-241 .module-item-1 .block-content
+h4{font-family:\'Roboto\';font-weight:400;font-size:15px;color:rgba(0, 0, 0, 1);margin-top:10px;margin-bottom:5px}.module-blocks-241 .module-item-1 .block-content
+h5{font-size:17px;font-weight:400;margin-bottom:15px}.module-blocks-241 .module-item-1 .block-content
+h6{color:rgba(255, 255, 255, 1);text-transform:uppercase;padding:6px;padding-right:10px;padding-left:10px;margin-bottom:15px;display:inline-block}.module-blocks-241 .module-item-1 .block-content
+blockquote{font-size:17px;color:rgba(109, 118, 125, 1);font-style:italic;padding:15px;padding-top:10px;padding-bottom:10px;margin-top:15px;margin-bottom:15px;border-radius:3px;float:none;display:block}.module-blocks-241 .module-item-1 .block-content blockquote::before{margin-left:auto;margin-right:auto;float:left;content:\'\\e98f\' !important;font-family:icomoon !important;margin-right:10px}.module-blocks-241 .module-item-1 .block-content
+hr{background:rgba(0, 0, 0, 0.05);margin-top:5px;margin-bottom:5px;border-width:0;border-bottom-width:1px;border-style:solid;border-color:rgba(204, 204, 204, 0.45);overflow:visible}.module-blocks-241 .module-item-1 .block-content hr::before{font-size:20px;border-radius:0px}.module-blocks-241 .module-item-1 .block-content .drop-cap{font-family:\'Roboto\' !important;font-weight:700 !important;font-size:60px !important;font-family:\'Roboto\';font-weight:700;margin-right:5px}.module-blocks-241 .module-item-1 .block-content .amp::before{content:\'\\e901\' !important;font-family:icomoon !important;font-size:25px;top:5px}.module-blocks-241 .module-item-1 .block-content .video-responsive{margin-bottom:15px}@media (max-width: 470px){.module-blocks-241 .module-item-1 .block-content
+h1{font-size:24px}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        700 => '700',
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'display' => 'grid',
+    'displayTablet' => '',
+    'displayPhone' => '',
+    'carousel' => false,
+    'itemsPerRow' => 
+    array (
+      'c0' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'c1' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'c2' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'sc' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+    ),
+    'default' => '',
+    'title' => '',
+    'imageDimensions' => 
+    array (
+      'width' => NULL,
+      'height' => NULL,
+      'resize' => 'crop',
+    ),
+    'lazyLoad' => false,
+    'status' => true,
+    'id' => 'blocks-69e79c4901bb4',
+    'module_id' => 241,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-blocks',
+      2 => 'module-blocks-241',
+      3 => 'blocks-grid',
+      'carousel-mode' => false,
+    ),
+    'carouselOptions' => 
+    array (
+      'speed' => 0,
+      'autoplay' => false,
+      'pauseOnHover' => false,
+      'loop' => false,
+    ),
+    'default_index' => 0,
+    'items' => 
+    array (
+      1 => 
+      array (
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'header' => 'none',
+        'text' => '',
+        'alt' => '',
+        'contentType' => 'html',
+        'shortDescriptionLimit' => '150',
+        'dynamic' => 'journal3/blocks_example',
+        'expandButton' => true,
+        'footer' => 'none',
+        'footerText' => '',
+        'footerButton' => 'Shop Now',
+        'footerButtonLink' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'id' => '241-1',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-1',
+          'tab-pane' => false,
+          'active' => false,
+          'panel' => false,
+          'panel-active' => false,
+          'swiper-slide' => false,
+        ),
+        'tab_classes' => 
+        array (
+          0 => 'tab-1',
+          'active' => false,
+        ),
+        'panel_classes' => 
+        array (
+          0 => 'panel-collapse',
+          1 => 'collapse',
+          'in' => false,
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/placeholder-1000x1000.png',
+        'image2x' => 'http://localhost/matsuri/image/cache/placeholder-1000x1000.png',
+        'title' => '',
+        'content' => '<h2><b>Matsuri – Your Trusted Beauty & Personal Care Destination in Bangladesh</b></h2><p>Matsuri is a trusted online destination in Bangladesh for authentic beauty and personal care products, offering a complete range of skincare, hair care, makeup, and men’s grooming essentials in one place. At Matsuri, we focus on providing original and carefully selected products that suit the daily needs of Bangladeshi customers and the local climate. Our collection includes Sunscreen, Facewash / Cleanser, Toner & Lotion, Moisturizer & Acne Care, Serum, Exfoliator & Scrub, and Eye Care products designed to protect the skin from sun damage, pollution, acne, dryness, and early signs of aging. We also offer effective Hair Care solutions to help control hair fall, reduce dandruff, repair damaged hair, and improve overall hair health, along with nourishing Lip Care and refreshing Eye Care products for daily use. For beauty lovers, Matsuri features a versatile range of Make Up Items suitable for both everyday looks and special occasions, while our dedicated Men’s Care collection supports a clean, confident, and well-groomed lifestyle. In addition, we proudly provide original DAISO products and other trusted brands, ensuring quality and authenticity in every purchase. With easy ordering, reliable delivery across Bangladesh, and friendly customer support, Matsuri aims to make beauty and personal care simple, accessible, and trustworthy for everyone.</p><h3><b>Sunscreen – Daily Protection for Healthy Skin</b></h3><p>Sunscreen is an essential part of every skincare routine, especially in a country like Bangladesh where sun exposure is strong throughout the year. At Matsuri, we offer a carefully selected range of sunscreens designed to protect your skin from harmful UVA and UVB rays. Regular use of sunscreen helps prevent sunburn, dark spots, pigmentation, premature aging, and long-term skin damage caused by sunlight. Our sunscreen collection includes lightweight, non-greasy, and skin-friendly formulas suitable for oily, dry, sensitive, and combination skin types. Whether you need sunscreen for daily outdoor activities, office use, or travel, Matsuri ensures reliable protection without clogging pores or leaving a white cast. By choosing the right sunscreen from Matsuri, you can maintain an even skin tone, protect your skin barrier, and keep your skin healthy and youthful every day.</p><h3><b>Facewash / Cleanser – The First Step to Clear Skin</b></h3><p>Cleansing is the foundation of healthy skin, and choosing the right facewash makes a visible difference. Matsuri offers a wide range of facewash and cleanser products that gently remove dirt, oil, makeup residue, and pollution from your skin. A good cleanser helps prevent acne, breakouts, dullness, and clogged pores while keeping your skin fresh and balanced. Our collection includes facewash options for oily, dry, acne-prone, sensitive, and combination skin. Whether you prefer foam, gel, cream, or mild cleanser formulas, Matsuri provides products that cleanse effectively without stripping natural moisture. Regular use of a suitable facewash improves skin texture, supports better absorption of skincare products, and helps maintain a clean, healthy glow throughout the day.</p><h3><b>Toner & Lotion – Balance and Hydration for Your Skin</b></h3><p>Toners and lotions play an important role in restoring your skin’s natural balance after cleansing. At Matsuri, our toner and lotion collection helps tighten pores, control excess oil, and provide instant hydration. Toners prepare your skin for the next steps of your skincare routine, allowing serums and moisturizers to work more effectively. Our range includes soothing, hydrating, and refreshing formulas suitable for different skin concerns such as acne, dryness, sensitivity, and uneven texture. Using toner and lotion regularly helps improve skin clarity, maintain moisture levels, and create a smoother, healthier appearance. Matsuri ensures that every product is gentle, effective, and suitable for daily use in Bangladesh’s climate.</p><h3><b>Moisturizer & Acne Care – Nourish and Repair Your Skin</b></h3><p>Proper moisturizing is essential for all skin types, including oily and acne-prone skin. Matsuri offers moisturizers and acne care products that hydrate the skin while helping to reduce pimples, redness, and inflammation. Our collection includes lightweight gels, creams, and treatment products designed to strengthen the skin barrier and lock in moisture without feeling heavy. Acne care products help control breakouts, soothe irritated skin, and promote faster healing. With consistent use, these products support clearer, healthier, and more balanced skin. Matsuri focuses on providing solutions that nourish your skin while addressing common concerns such as acne, dryness, and uneven texture.</p><h3><b>Serum – Targeted Skincare Solutions</b></h3><p>Serums are highly concentrated skincare products designed to address specific skin concerns. At Matsuri, our serum collection targets issues such as dullness, dark spots, acne marks, dehydration, and early signs of aging. Lightweight and fast-absorbing, serums penetrate deep into the skin to deliver active ingredients effectively. Regular use helps improve skin tone, texture, and overall radiance. Whether you need brightening, hydrating, or repairing solutions, Matsuri offers serums that enhance your skincare routine and provide visible results over time.</p><h3><b>Hair Care – Strong, Healthy, and Shiny Hair</b></h3><p>Healthy hair requires proper care and nourishment. Matsuri’s Hair Care range includes products that help reduce hair fall, control dandruff, repair damaged hair, and improve scalp health. Our collection supports stronger roots, smoother texture, and natural shine. Suitable for different hair types, these products help maintain clean, manageable, and healthy hair even in humid weather. With regular use, Matsuri hair care products promote long-term hair strength and confidence.</p><h3><b>Makeup, Men’s Care & DAISO – Everyday Beauty Essentials</b></h3><p>Matsuri offers a versatile selection of Make Up Items for daily wear and special occasions, helping you express your personal style with confidence. From natural looks to bold finishes, our makeup products are easy to use and skin-friendly. We also provide a dedicated Men’s Care collection featuring grooming and skincare essentials designed specifically for men. In addition, Matsuri proudly offers original DAISO products known for quality, practicality, and affordability. Authenticity and customer satisfaction are always our top priorities.</p>',
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

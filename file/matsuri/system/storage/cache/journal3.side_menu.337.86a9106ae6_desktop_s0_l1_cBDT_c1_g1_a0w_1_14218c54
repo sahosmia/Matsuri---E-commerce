@@ -1,0 +1,62 @@
+<?php $val = array (
+  'css' => '.side-menu-337{display:block;top:200px;left:initial;right:0;background:rgba(0, 0, 0, 0)}.side-menu-337 li>a::before{font-size:25px}.side-menu-337>ul>li+li{border-color:rgba(0,0,0,0)}.side-menu-337>ul>li>a::before{color:rgba(255,255,255,1)}.side-menu-337>ul>li>a:hover::before{color:rgba(255,255,255,1)}.side-menu-337>ul>li>a:active::before{color:rgba(255,255,255,1)}.side-menu-337>ul>li>a{font-family:\'Roboto\';font-weight:400;font-size:11px;color:rgba(255,255,255,1);text-transform:capitalize}.side-menu-337>ul>li>a:hover{color:rgba(255,255,255,1);background:rgba(0,0,0,0)}.side-menu-337>ul>li>a:active{background:rgba(0, 0, 0, 0)}.j-menu li .count-badge{color:rgba(255, 255, 255, 1);background:rgba(233, 25, 34, 1);border-radius:10px}.desktop .j-menu li a:hover .count-badge{background:rgba(233, 25, 34, 1) !important}.side-menu-337 > ul > li > a .count-badge{transform:translateX(5px);margin-top:-5px;display:inline-flex}.side-menu-337 .side-menu-item-3>a::before{content:\'\\e913\' !important;font-family:icomoon !important;font-size:30px;margin-top:8px}.side-menu-337 > ul .side-menu-item-3>a{font-family:\'Roboto\';font-weight:400;color:rgba(255, 255, 255, 1)}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'status' => true,
+    'id' => 'side-menu-69e79c4910abe',
+    'module_id' => 337,
+    'classes' => 
+    array (
+      0 => 'side-menu',
+      1 => 'side-menu-337',
+    ),
+    'items' => 
+    array (
+      3 => 
+      array (
+        'title' => '',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => 'https://www.facebook.com/matsuribd001/',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+            'target' => 'target="_blank"',
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'side-menu-item',
+          2 => 'side-menu-item-3',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

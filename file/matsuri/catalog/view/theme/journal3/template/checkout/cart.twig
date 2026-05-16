@@ -1,0 +1,298 @@
+{{ header }}
+<ul class="breadcrumb">
+  {% for breadcrumb in breadcrumbs %}
+  <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+  {% endfor %}
+</ul>
+{% if j3.settings.get('pageTitlePosition') == 'top' %}
+  <h1 class="title page-title">
+    <span >
+      {{ heading_title }}
+    {% if weight %}
+      &nbsp;({{ weight }})
+    {% endif %}
+    </span>
+  </h1>
+{% endif %}
+{{ j3.loadController('journal3/layout', 'top') }}
+<div id="checkout-cart" class="container">
+  {% if attention %}
+  <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ attention }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+  {% if success %}
+  <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+  {% if error_warning %}
+  <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">
+      {% if j3.settings.get('pageTitlePosition') == 'default' %}
+      <h1 class="title page-title">{{ heading_title }}
+        {% if weight %}
+        &nbsp;({{ weight }})
+        {% endif %} </h1>
+      {% endif %}
+      {{ content_top }}
+      <div class="cart-page">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" class="cart-table">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <td class="text-center td-image">{{ column_image }}</td>
+                <td class="text-left td-name">{{ column_name }}</td>
+                <td class="text-center td-model">{{ column_model }}</td>
+                <td class="text-center td-qty">{{ column_quantity }}</td>
+                <td class="text-center td-price">{{ column_price }}</td>
+                <td class="text-center td-total">{{ column_total }}</td>
+              </tr>
+              </thead>
+              <tbody>
+
+              {% for product in products %}
+                <tr>
+                  <td class="text-center td-image">{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" /></a> {% endif %}</td>
+                  <td class="text-left td-name"><a href="{{ product.href }}">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}
+                      {% if product.option %}
+                          {% for option in product.option %} <br />
+                            <small>{{ option.name }}: {{ option.value }}</small> {% endfor %}
+                      {% endif %}
+                      {% if product.reward %} <br />
+                        <small>{{ product.reward }}</small> {% endif %}
+                      {% if product.recurring %} <br />
+                        <span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}</td>
+                  <td class="text-center td-model">{{ product.model }}</td>
+                  <td class="text-center td-qty">
+                    <div class="input-group btn-block">
+                      <div class="stepper">
+                        <input type="text" name="quantity[{{ product.cart_id }}]" value="{{ product.quantity }}" size="1" class="form-control" />
+                        <span>
+                      <i class="fa fa-angle-up"></i>
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                      </div>
+                      <span class="input-group-btn">
+                    <button type="submit" data-toggle="tooltip" title="{{ button_update }}" class="btn btn-update"><i class="fa fa-refresh"></i></button>
+                    <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-remove" onclick="cart.remove('{{ product.cart_id }}');"><i class="fa fa-times-circle"></i></button>
+                  </span>
+                    </div>
+                  </td>
+                  <td class="text-center td-price">{{ product.price }}</td>
+                  <td class="text-center td-total">{{ product.total }}</td>
+                </tr>
+              {% endfor %}
+              {% for voucher in vouchers %}
+                <tr>
+                  <td></td>
+                  <td class="text-left td-voucher">{{ voucher.description }}</td>
+                  <td class="text-left td-voucher"></td>
+                  <td class="text-left td-voucher"><div class="input-group btn-block" style="max-width: 200px;">
+                      <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
+                      <span class="input-group-btn">
+                  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger" onclick="voucher.remove('{{ voucher.key }}');"><i class="fa fa-times-circle"></i></button>
+                  </span></div></td>
+                  <td class="text-right td-voucher">{{ voucher.amount }}</td>
+                  <td class="text-right td-voucher">{{ voucher.amount }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </form>
+
+        {% if coupon_status %}
+        {# Matches Journal checkout coupon block (journal3/checkout/coupon_voucher_reward.twig) #}
+        {% set coupon_post_url = coupon_ajax_url|default('index.php?route=extension/total/coupon/coupon') %}
+        {% set coupon_block_title = heading_coupon_block|default(entry_coupon) %}
+        {% set coupon_btn_label = button_submit|default(button_coupon) %}
+        {% set coupon_ok_text = coupon_success_text|default('Success: Your coupon discount has been applied!') %}
+        <div class="checkout-section section-cvr cart-page-coupon">
+          <div class="title section-title">{{ coupon_block_title }}</div>
+          <div class="section-body">
+            <div class="form-group form-coupon">
+              <label class="control-label" for="input-coupon-cart">{{ entry_coupon }}</label>
+              <div class="input-group" style="max-width: 480px;">
+                <input type="text" name="coupon" value="{{ coupon|e('html_attr') }}" placeholder="{{ entry_coupon }}" id="input-coupon-cart" class="form-control" autocomplete="off" />
+                <span class="input-group-btn">
+                  <button type="button" id="button-coupon-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary"><span>{{ coupon_btn_label }}</span></button>
+                </span>
+              </div>
+              <div id="coupon-cart-message" class="coupon-cart-feedback" style="display: none; margin-top: 8px;"></div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript"><!--
+(function ($) {
+  var couponSuccessDefault = {{ coupon_ok_text|json_encode|raw }};
+
+  function journalCartCouponUrl(u) {
+    if (!u) { return u; }
+    if (u.indexOf('http') === 0) { return u; }
+    if (u.charAt(0) === '/') { return window.location.protocol + '//' + window.location.host + u; }
+    var b = $('base').attr('href') || (window.location.origin + '/');
+    if (b.slice(-1) !== '/') { b += '/'; }
+    return b + u.replace(/^\.\//, '');
+  }
+
+  function showCartCouponSuccess($msg, text) {
+    var t = (text && String(text).length) ? String(text) : (couponSuccessDefault || '');
+    if (!t) { return; }
+    $msg.removeClass('text-danger').addClass('text-success')
+      .html('<i class="fa fa-check-circle"></i> ' + $('<span/>').text(t).html())
+      .css('display', 'block');
+    try {
+      if ($msg[0] && $msg[0].scrollIntoView) {
+        $msg[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    } catch (e) {}
+  }
+
+  $('#button-coupon-cart').on('click', function () {
+    var $msg = $('#coupon-cart-message');
+    var $btn = $('#button-coupon-cart');
+    $msg.hide().removeClass('text-danger text-success').html('').css('display', 'none');
+
+    $.ajax({
+      url: '{{ coupon_post_url }}',
+      type: 'post',
+      data: 'coupon=' + encodeURIComponent($('#input-coupon-cart').val()),
+      dataType: 'json',
+      beforeSend: function () {
+        try {
+          if ($btn.data('loading-text')) {
+            $btn.data('orig-html', $btn.html()).html($btn.data('loading-text')).prop('disabled', true);
+          } else {
+            $btn.prop('disabled', true);
+          }
+        } catch (e) {
+          $btn.prop('disabled', true);
+        }
+      },
+      complete: function () {
+        try {
+          if ($btn.data('orig-html')) {
+            $btn.html($btn.data('orig-html')).prop('disabled', false);
+          } else {
+            $btn.prop('disabled', false);
+          }
+        } catch (e) {
+          $btn.prop('disabled', false);
+        }
+      },
+      success: function (json) {
+        if (typeof json === 'string') {
+          try { json = JSON.parse(json); } catch (e) { return; }
+        }
+        if (typeof json !== 'object' || json === null) {
+          return;
+        }
+
+        $('.alert-dismissible').remove();
+
+        if (json['error']) {
+          $msg.addClass('text-danger').removeClass('text-success').html(json['error']).show();
+          return;
+        }
+
+        if (json['redirect']) {
+          if (json['coupon'] !== undefined) {
+            $('#input-coupon-cart').val(json['coupon']);
+          }
+          showCartCouponSuccess($msg, json['success']);
+
+          var reloadUrl = journalCartCouponUrl(json['redirect']);
+          $.get(reloadUrl, function (html) {
+            var $parsed = $('<div>').append($.parseHTML(html, document, true));
+            var $newTable = $parsed.find('#checkout-cart .cart-total table').first();
+            if ($newTable.length) {
+              $('#checkout-cart .cart-total table').first().replaceWith($newTable.clone());
+            }
+          }).fail(function () {
+            window.location.href = reloadUrl + (reloadUrl.indexOf('?') === -1 ? '?' : '&') + '_=' + Date.now();
+          });
+        }
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        alert(thrownError + \"\\r\\n\" + xhr.statusText + \"\\r\\n\" + xhr.responseText);
+      }
+    });
+  });
+})(jQuery);
+//--></script>
+        {% endif %}
+
+        <div class="cart-bottom">
+          <div class="panels-total">
+              {% if modules and j3.settings.get('cartPanelsStatus') %}
+                <div class="cart-panels">
+                  <h2 class="title">{{ text_next }}</h2>
+                  <p>{{ text_next_choice }}</p>
+                  <div class="panel-group" id="accordion"> {% for module in modules %}
+                          {{ module }}
+                      {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+            <div class="cart-total">
+              <table class="table table-bordered">
+                  {# Keep Coupon right after Sub-Total #}
+                  {% set sub_total = null %}
+                  {% set coupon_total = null %}
+                  {% set other_totals = [] %}
+                  {% for total in totals %}
+                    {% if total.code == 'sub_total' %}
+                      {% set sub_total = total %}
+                    {% elseif total.code == 'coupon' %}
+                      {% set coupon_total = total %}
+                    {% else %}
+                      {% set other_totals = other_totals|merge([total]) %}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% if sub_total %}
+                    <tr>
+                      <td class="text-right"><strong>{{ sub_total.title }}:</strong></td>
+                      <td class="text-right">{{ sub_total.text }}</td>
+                    </tr>
+                  {% endif %}
+
+                  {% if coupon_total %}
+                    <tr>
+                      <td class="text-right"><strong>{{ coupon_total.title }}:</strong></td>
+                      <td class="text-right">{{ coupon_total.text }}</td>
+                    </tr>
+                  {% endif %}
+
+                  {% for total in other_totals %}
+                    <tr>
+                      <td class="text-right"><strong>{{ total.title }}:</strong></td>
+                      <td class="text-right">{{ total.text }}</td>
+                    </tr>
+                  {% endfor %}
+              </table>
+            </div>
+          </div>
+          <div class="buttons clearfix">
+            <div class="pull-left"><a href="{{ continue }}" class="btn btn-default"><span>{{ button_shopping }}</span></a></div>
+            <div class="pull-right"><a href="{{ checkout }}" class="btn btn-primary"><span>{{ button_checkout }}</span></a></div>
+          </div>
+        </div>
+      </div>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+{{ footer }}

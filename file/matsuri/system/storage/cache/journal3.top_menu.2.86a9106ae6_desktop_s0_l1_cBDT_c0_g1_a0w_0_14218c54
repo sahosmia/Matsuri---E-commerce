@@ -1,0 +1,57 @@
+<?php $val = array (
+  'css' => '.top-menu-2 .j-menu li.top-menu-item-1>a::before{content:none !important}.top-menu-2>ul>.top-menu-item-1>a{text-align:left}.top-menu-2>ul>.top-menu-item-1>a>.links-text{display:block}.top-menu-2 > ul > .top-menu-item-1 > a .count-badge{position:relative}',
+  'fonts' => 
+  array (
+  ),
+  'settings' => 
+  array (
+    'scheduledStatus' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'status' => true,
+    'id' => 'top-menu-69e79e203f933',
+    'module_id' => 2,
+    'classes' => 
+    array (
+      0 => 'top-menu',
+      1 => 'top-menu-2',
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => '<marquee>Protect your youth. Grab a Flat 20% discount on our entire sunscreen range.</marquee>',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-1',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          'icon-only' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

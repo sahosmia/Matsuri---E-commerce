@@ -1,0 +1,17 @@
+<?php $val = array (
+  'css' => '.bottom-menu-308>ul>li>a{height:50px;min-width:40px;font-size:10px;color:rgba(153, 153, 153, 1);font-weight:400;text-transform:capitalize;line-height:2}.has-bottom-menu .site-wrapper{padding-bottom:50px}.has-bottom-menu .scroll-top{bottom:calc(50px+10px)}.bottom-menu>ul>li>a{flex-direction:column}.bottom-menu > ul > li .links-text{top:-2px;margin:0}.bottom-menu>ul>li>a::before{width:100%}.bottom-menu-308 li>a::before{font-size:17px}.bottom-menu-308{border-style:solid;border-color:rgba(48, 56, 65, 1);background:rgba(8, 22, 33, 1);box-shadow:0 -1px 3px 3px rgba(0,0,0,0.1)}.bottom-menu-308>ul>li>a::before{color:rgba(255, 255, 255, 1)}.j-menu li .count-badge{color:rgba(255, 255, 255, 1);background:rgba(233, 25, 34, 1);border-radius:10px}.desktop .j-menu li a:hover .count-badge{background:rgba(233, 25, 34, 1) !important}.bottom-menu-308 > ul > li > a .count-badge{display:none}',
+  'fonts' => 
+  array (
+  ),
+  'settings' => 
+  array (
+    'status' => false,
+    'id' => 'bottom-menu-69e79c49100cc',
+    'module_id' => 308,
+    'classes' => 
+    array (
+      0 => 'bottom-menu',
+      1 => 'bottom-menu-308',
+    ),
+  ),
+);

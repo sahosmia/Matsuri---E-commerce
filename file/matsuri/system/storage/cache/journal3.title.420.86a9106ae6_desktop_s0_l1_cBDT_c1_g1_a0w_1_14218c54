@@ -1,0 +1,44 @@
+<?php $val = array (
+  'css' => '.module-title-420 .title-wrapper
+h3{font-family:\'Roboto\';font-weight:700;font-size:36px;color:rgba(8,22,33,1);text-align:center;text-transform:uppercase}.module-title-420{margin-top:25px}.module-title-420 .title-wrapper::before{opacity:.05;display:block}.module-title-420 .title-wrapper{text-align:left}.module-title-420 .title-divider{margin-left:0;margin-right:auto}@media (max-width: 470px){.module-title-420 .title-wrapper
+h3{font-family:\'Roboto\';font-weight:400;font-size:24px;color:rgba(0,0,0,1);text-transform:uppercase}.module-title-420{padding-top:8px;padding-bottom:5px;margin-top:10px}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        700 => '700',
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'type' => 'custom',
+    'title' => 'Trending',
+    'subtitle' => '',
+    'status' => true,
+    'id' => 'title-69e79c48bd6e4',
+    'module_id' => 420,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-title',
+      2 => 'module-title-420',
+    ),
+    'items' => 
+    array (
+    ),
+  ),
+);

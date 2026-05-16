@@ -1,0 +1,45 @@
+<?php $val = array (
+  'css' => '.module-title-419 .title-wrapper
+h3{font-family:\'Roboto\';font-weight:700;font-size:24px;color:rgba(8, 22, 33, 1);text-align:center;text-transform:capitalize}.module-title-419 .title-wrapper
+.subtitle{font-family:\'Roboto\';font-weight:400;font-size:15px;color:rgba(48,56,65,1);text-transform:capitalize;letter-spacing:1px}.module-title-419{margin-top:40px}.module-title-419 .title-wrapper::before{opacity:.05;display:block}.module-title-419 .title-wrapper{text-align:left}.module-title-419 .title-divider{margin-left:0;margin-right:auto}@media (max-width: 470px){.module-title-419 .title-wrapper
+h3{font-family:\'Roboto\';font-weight:700;font-size:18px;color:rgba(0,0,0,1)}.module-title-419{margin-top:20px}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        700 => '700',
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'type' => 'custom',
+    'title' => 'Our brands',
+    'subtitle' => '',
+    'status' => true,
+    'id' => 'title-69e79c48f062f',
+    'module_id' => 419,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-title',
+      2 => 'module-title-419',
+    ),
+    'items' => 
+    array (
+    ),
+  ),
+);

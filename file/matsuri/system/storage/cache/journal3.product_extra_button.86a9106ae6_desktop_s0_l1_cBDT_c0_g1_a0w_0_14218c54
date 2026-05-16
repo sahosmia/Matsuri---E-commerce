@@ -1,0 +1,81 @@
+<?php $val = array (
+  'data' => 
+  array (
+    46 => 
+    array (
+      'php' => 
+      array (
+        'type' => 'custom',
+        'label' => 'Buy Now',
+        'action' => 'quickbuy',
+        'link' => 
+        array (
+          'type' => 'page',
+          'id' => '22',
+          'href' => 'http://localhost/matsuri/index.php?route=product/compare',
+          'name' => '',
+          'total' => '{{ $compare }}',
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+            0 => 'compare-badge',
+          ),
+        ),
+      ),
+      'js' => 
+      array (
+      ),
+      'fonts' => 
+      array (
+      ),
+      'css' => '.btn-extra-46::before{content:none !important}',
+    ),
+    93 => 
+    array (
+      'php' => 
+      array (
+        'type' => 'custom',
+        'label' => 'Add to Compare',
+        'action' => 'link',
+        'link' => 
+        array (
+          'type' => 'page',
+          'id' => '22',
+          'href' => 'http://localhost/matsuri/index.php?route=product/compare',
+          'name' => '',
+          'total' => '{{ $compare }}',
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+            0 => 'compare-badge',
+          ),
+        ),
+      ),
+      'js' => 
+      array (
+      ),
+      'fonts' => 
+      array (
+      ),
+      'css' => '.btn-extra-93::before{content:none !important}',
+    ),
+  ),
+  'all' => 
+  array (
+    46 => 46,
+    93 => 93,
+  ),
+  'special' => 
+  array (
+  ),
+  'outofstock' => 
+  array (
+  ),
+  'custom' => 
+  array (
+  ),
+);

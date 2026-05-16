@@ -1,0 +1,132 @@
+<?php $val = array (
+  'css' => '.module-grid-318 .grid-row-1{background:rgba(255, 255, 255, 1)}.module-grid-318 .grid-row-1::before{display:block;left:0;width:100vw}.module-grid-318 .grid-row-1 .grid-col-1{width:20%}.module-grid-318 .grid-row-1 .grid-col-1 .grid-item{height:auto}.module-grid-318 .grid-row-1 .grid-col-1 .grid-items{justify-content:flex-start}@media (max-width: 1024px){.module-grid-318 .grid-row-1 .grid-col-1{width:25%}}@media (max-width: 470px){.module-grid-318 .grid-row-1 .grid-col-1{width:40%}}.module-grid-318 .grid-row-1 .grid-col-2{width:20%;padding-top:7px}.module-grid-318 .grid-row-1 .grid-col-2 .grid-item{height:auto}.module-grid-318 .grid-row-1 .grid-col-2 .grid-items{justify-content:flex-start}@media (max-width: 1024px){.module-grid-318 .grid-row-1 .grid-col-2{width:30%}}@media (max-width: 470px){.module-grid-318 .grid-row-1 .grid-col-2{width:55.00000000000001%;padding-top:12px}}.module-grid-318 .grid-row-1 .grid-col-3{width:60%}.module-grid-318 .grid-row-1 .grid-col-3 .grid-item{height:auto}.module-grid-318 .grid-row-1 .grid-col-3 .grid-items{justify-content:flex-start}.module-grid-318 .grid-row-1 .grid-col-4{width:100%}.module-grid-318 .grid-row-1 .grid-col-4 .grid-item{height:auto}.module-grid-318 .grid-row-1 .grid-col-4 .grid-items{justify-content:flex-start}',
+  'fonts' => 
+  array (
+  ),
+  'settings' => 
+  array (
+    'name' => 'New Column',
+    'grid_classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-grid',
+      2 => 'module-grid-318',
+      3 => 'grid-rows',
+    ),
+    'rows' => 
+    array (
+      1 => 
+      array (
+        'classes' => 
+        array (
+          0 => 'grid-row',
+          1 => 'grid-row-1',
+        ),
+        'columns' => 
+        array (
+          1 => 
+          array (
+            'name' => 'New Column',
+            'classes' => 
+            array (
+              0 => 'grid-col',
+              1 => 'grid-col-1',
+            ),
+            'items' => 
+            array (
+              1 => 
+              array (
+                'classes' => 
+                array (
+                  0 => 'grid-item',
+                  1 => 'grid-item-1',
+                ),
+                'item' => 
+                array (
+                  'id' => '428',
+                  'name' => 'Hot_deals_Offers_title',
+                  'type' => 'title',
+                ),
+              ),
+            ),
+          ),
+          2 => 
+          array (
+            'name' => 'New Column',
+            'classes' => 
+            array (
+              0 => 'grid-col',
+              1 => 'grid-col-2',
+            ),
+            'items' => 
+            array (
+              1 => 
+              array (
+                'classes' => 
+                array (
+                  0 => 'grid-item',
+                  1 => 'grid-item-1',
+                ),
+                'item' => 
+                array (
+                  'id' => '287',
+                  'name' => 'New Countdown Module',
+                  'type' => 'countdown',
+                ),
+              ),
+            ),
+          ),
+          3 => 
+          array (
+            'name' => 'New Column',
+            'classes' => 
+            array (
+              0 => 'grid-col',
+              1 => 'grid-col-3',
+            ),
+            'items' => 
+            array (
+              1 => 
+              array (
+                'classes' => 
+                array (
+                  0 => 'grid-item',
+                  1 => 'grid-item-1',
+                ),
+                'item' => 
+                array (
+                ),
+              ),
+            ),
+          ),
+          4 => 
+          array (
+            'name' => 'New Column',
+            'classes' => 
+            array (
+              0 => 'grid-col',
+              1 => 'grid-col-4',
+            ),
+            'items' => 
+            array (
+              1 => 
+              array (
+                'classes' => 
+                array (
+                  0 => 'grid-item',
+                  1 => 'grid-item-1',
+                ),
+                'item' => 
+                array (
+                  'id' => '429',
+                  'name' => 'hot_deals_product_home',
+                  'type' => 'products',
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+);

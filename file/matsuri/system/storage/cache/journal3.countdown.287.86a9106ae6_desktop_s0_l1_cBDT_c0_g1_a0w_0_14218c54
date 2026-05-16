@@ -1,0 +1,45 @@
+<?php $val = array (
+  'css' => '.module-countdown-287
+.countdown{font-family:\'Roboto\';font-weight:400;font-size:16px;color:rgba(242, 244, 248, 1);text-align:center;background:rgba(233, 25, 34, 1);border-radius:5px}.module-countdown-287 .countdown div
+span{font-family:\'Roboto\';font-weight:400;font-size:14px;color:rgba(221, 221, 221, 1);text-align:center}.module-countdown-287 .countdown>div{border-style:solid;border-color:rgba(255, 255, 255, 1)}@media (max-width: 1024px){.module-countdown-287
+.countdown{font-size:16px}.module-countdown-287 .countdown div
+span{font-size:14px}}@media (max-width: 470px){.module-countdown-287
+.countdown{font-size:14px}.module-countdown-287 .countdown div
+span{font-size:12px}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        400 => '400',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'status' => true,
+    'id' => 'countdown-69e79e1ff3e9c',
+    'module_id' => 287,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-countdown',
+      2 => 'module-countdown-287',
+    ),
+    'date' => 'Sat Feb 28 2026 13:03:02 +0600',
+    'items' => 
+    array (
+    ),
+  ),
+);

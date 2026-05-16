@@ -1,0 +1,43 @@
+<?php $val = array (
+  'css' => '.module-title-426 .title-wrapper
+h3{font-family:\'Roboto\';font-weight:700;font-size:36px;color:rgba(8, 22, 33, 1);text-align:center;text-transform:uppercase}.module-title-426 .title-wrapper::before{opacity:.05;display:block}.module-title-426 .title-wrapper{text-align:left}.module-title-426 .title-divider{margin-left:0;margin-right:auto}@media (max-width: 470px){.module-title-426 .title-wrapper
+h3{font-family:\'Roboto\';font-weight:700;font-size:24px;color:rgba(0,0,0,1);text-transform:uppercase}.module-title-426{padding-top:8px;padding-bottom:5px}}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        700 => '700',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'type' => 'custom',
+    'title' => 'Features Product',
+    'subtitle' => '',
+    'status' => true,
+    'id' => 'title-69e79c48ea69a',
+    'module_id' => 426,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-title',
+      2 => 'module-title-426',
+    ),
+    'items' => 
+    array (
+    ),
+  ),
+);

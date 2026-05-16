@@ -1,0 +1,147 @@
+<?php $val = array (
+  'css' => '.top-menu-14 .j-menu li.top-menu-item-2>a::before{content:\'\\e8b1\' !important;font-family:icomoon !important;color:rgba(233, 25, 34, 1)}.desktop .top-menu-14 .j-menu li.top-menu-item-2:hover>a::before{color:rgba(51,96,167,1)}.top-menu-14>ul>.top-menu-item-2>a{text-align:left}.top-menu-14>ul>.top-menu-item-2>a>.links-text{display:block}.top-menu-14 > ul > .top-menu-item-2 > a .count-badge{position:relative}.top-menu-14 .j-menu li.top-menu-item-3>a::before{content:\'\\f186\' !important;font-family:icomoon !important;color:rgba(233, 25, 34, 1)}.desktop .top-menu-14 .j-menu li.top-menu-item-3:hover>a::before{color:rgba(51,96,167,1)}.top-menu-14>ul>.top-menu-item-3>a{text-align:left}.top-menu-14>ul>.top-menu-item-3>a>.links-text{display:block}.top-menu-14 > ul > .top-menu-item-3 > a .count-badge{position:relative}.top-menu-14 .j-menu li.top-menu-item-7>a::before{content:\'\\ead9\' !important;font-family:icomoon !important}.top-menu-14 .j-menu li.top-menu-item-7>a:first-child{font-size:15px;text-transform:capitalize}.top-menu-14>ul>.top-menu-item-7>a{text-align:center}.top-menu-14>ul>.top-menu-item-7>a>.links-text{display:none}.top-menu-14 > ul > .top-menu-item-7 > a .count-badge{position:absolute;top:auto;right:auto}.top-menu-14 .j-menu .j-menu li.top-menu-item-8>a::before{content:\'\\ebdb\' !important;font-family:icomoon !important;color:rgba(109, 118, 125, 1)}.desktop .top-menu-14 li.top-menu-item-8:hover>a::before{color:rgba(239, 74, 35, 1)}.top-menu-14 li.top-menu-item-8 > a .links-text{color:rgba(109, 118, 125, 1)}.desktop .top-menu-14 li.top-menu-item-8:hover > a .links-text{color:rgba(239, 74, 35, 1) !important}',
+  'fonts' => 
+  array (
+  ),
+  'settings' => 
+  array (
+    'scheduledStatus' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'status' => true,
+    'id' => 'top-menu-69e79e2040205',
+    'module_id' => 14,
+    'classes' => 
+    array (
+      0 => 'top-menu',
+      1 => 'top-menu-14',
+    ),
+    'items' => 
+    array (
+      2 => 
+      array (
+        'title' => 'Offers<s>latest offers</s>',
+        'link' => 
+        array (
+          'type' => 'information',
+          'id' => '7',
+          'href' => 'http://localhost/matsuri/offers',
+          'name' => 'Offers',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-2',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          'icon-only' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'title' => 'Ramadan Deals<s>special offers</s>',
+        'link' => 
+        array (
+          'type' => 'information',
+          'id' => '8',
+          'href' => 'http://localhost/matsuri/friday-offer',
+          'name' => 'Friday offer',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-3',
+          'multi-level' => false,
+          'dropdown' => false,
+          'drop-menu' => false,
+          'icon-only' => false,
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      7 => 
+      array (
+        'title' => 'Account<s>Login/Register</s>',
+        'link' => 
+        array (
+          'type' => 'page',
+          'id' => '7',
+          'href' => 'http://localhost/matsuri/index.php?route=account/login',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'classes' => 
+        array (
+          0 => 'menu-item',
+          1 => 'top-menu-item',
+          2 => 'top-menu-item-7',
+          'multi-level' => false,
+          'dropdown' => true,
+          'drop-menu' => true,
+          'icon-only' => true,
+        ),
+        'items' => 
+        array (
+          8 => 
+          array (
+            'title' => 'Log in',
+            'link' => 
+            array (
+              'type' => 'page',
+              'id' => '',
+              'href' => 'http://localhost/matsuri/index.php?route=account/login',
+              'name' => '',
+              'total' => NULL,
+              'attrs' => 
+              array (
+              ),
+              'classes' => 
+              array (
+              ),
+            ),
+            'classes' => 
+            array (
+              0 => 'menu-item',
+              1 => 'top-menu-item-8',
+              'dropdown' => false,
+              'icon-only' => NULL,
+            ),
+            'items' => 
+            array (
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+);

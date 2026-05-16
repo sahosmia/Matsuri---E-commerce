@@ -1,0 +1,176 @@
+<?php $val = array (
+  'css' => '.module-info_blocks-305 .module-item.swiper-slide{margin-right:10px;width:calc((100% - 0 * 10px) / 1 - 0.01px)}.module-info_blocks-305 .module-item:not(.swiper-slide){padding:5px;width:calc(100% / 1 - 0.01px)}.one-column #content .module-info_blocks-305 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 3 * 0px) / 4 - 0.01px)}.one-column #content .module-info_blocks-305 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 4 - 0.01px)}.two-column #content .module-info_blocks-305 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 3 * 0px) / 4 - 0.01px)}.two-column #content .module-info_blocks-305 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 4 - 0.01px)}.side-column .module-info_blocks-305 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.side-column .module-info_blocks-305 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.module-info_blocks-305 .info-block .info-block-title{font-family:\'Roboto\';font-weight:400;font-size:14px;color:rgba(0, 0, 0, 1);display:block}.module-info_blocks-305 .info-block .info-block-text{font-family:\'Roboto\';font-weight:700;font-size:20px;color:rgba(239, 74, 35, 1);text-transform:capitalize;display:block}.module-info_blocks-305 .info-block-content{padding-left:20px;display:flex}.module-info_blocks-305 .info-block{display:flex;flex-direction:row;justify-content:flex-start;text-align:left}.module-info_blocks-305 .info-block::before{align-self:center;width:50px;height:40px;font-size:20px;color:rgba(233, 25, 34, 1)}.module-info_blocks-305 .info-block-img{align-self:center}.module-info_blocks-305 .info-block::before, .module-info_blocks-305 .info-block-img{border-width:0;border-right-width:1px;border-style:solid;border-color:rgba(255, 255, 255, 0.1);border-radius:0px}.module-info_blocks-305 .info-block .count-badge{display:none}.module-info_blocks-305 .module-body{margin-left:-15px}.module-info_blocks-305 .module-item .info-block .info-block-text{text-transform:lowercase}@media (max-width: 470px){.module-info_blocks-305 .module-item .info-block{justify-content:center}.module-info_blocks-305 .info-block .info-block-text{font-family:\'Roboto\';font-weight:700;font-size:14px}.module-info_blocks-305 .info-block-content{padding:0px;display:flex}.module-info_blocks-305 .info-block{display:flex;flex-direction:row;justify-content:flex-start;text-align:left}.module-info_blocks-305 .info-block::before{width:50px;height:40px;font-size:25px}.module-info_blocks-305 .info-block::before, .module-info_blocks-305 .info-block-img{border-style:none}.module-info_blocks-305 .module-body{margin:0px;margin-top:-10px;padding:0px}}.module-info_blocks-305 .module-item-1 .info-block::before{content:\'\\e0cd\' !important;font-family:icomoon !important}.module-info_blocks-305 .module-item-2 .info-block::before{content:\'\\e9c3\' !important;font-family:icomoon !important}.module-info_blocks-305 .module-item-3 .info-block::before{content:\'\\e94c\' !important;font-family:icomoon !important}',
+  'fonts' => 
+  array (
+    'fonts' => 
+    array (
+      'Roboto' => 
+      array (
+        400 => '400',
+        700 => '700',
+      ),
+    ),
+    'subsets' => 
+    array (
+      'latin-ext' => 'latin-ext',
+    ),
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'itemsPerRow' => 
+    array (
+      'c0' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 10,
+        ),
+      ),
+      'c1' => 
+      array (
+        0 => 
+        array (
+          'items' => 4,
+          'spacing' => 0,
+        ),
+      ),
+      'c2' => 
+      array (
+        0 => 
+        array (
+          'items' => 4,
+          'spacing' => 0,
+        ),
+      ),
+      'sc' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+    ),
+    'imageDimensions' => 
+    array (
+      'width' => NULL,
+      'height' => NULL,
+      'resize' => 'fill',
+    ),
+    'status' => true,
+    'id' => 'info_blocks-69e79e20438be',
+    'module_id' => 305,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-info_blocks',
+      2 => 'module-info_blocks-305',
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => '+8801712427711',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '',
+          'href' => 'tel: +8801712427711',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'content' => '',
+        'button' => false,
+        'id' => '305-1',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-1',
+          2 => 'info-blocks',
+          3 => 'info-blocks-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'title' => 'West Agargaon, Sher-e-Bangla Nagar, Dhaka-1207',
+        'link' => 
+        array (
+          'type' => '',
+          'id' => '',
+          'href' => '',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'content' => '',
+        'button' => false,
+        'id' => '305-2',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-2',
+          2 => 'info-blocks',
+          3 => 'info-blocks-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'title' => 'matsuribd23@gmail.com',
+        'link' => 
+        array (
+          'type' => 'custom',
+          'id' => '51',
+          'href' => 'mailto:matsuribd23@gmail.com',
+          'name' => '',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'icon',
+        'content' => '',
+        'button' => false,
+        'id' => '305-3',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-3',
+          2 => 'info-blocks',
+          3 => 'info-blocks-icon',
+        ),
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);

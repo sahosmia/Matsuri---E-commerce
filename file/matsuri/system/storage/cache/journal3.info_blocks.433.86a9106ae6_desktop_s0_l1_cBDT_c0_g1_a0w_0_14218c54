@@ -1,0 +1,175 @@
+<?php $val = array (
+  'css' => '.module-info_blocks-433 .module-item.swiper-slide{margin-right:20px;width:calc((100% - 2 * 20px) / 3 - 0.01px)}.module-info_blocks-433 .module-item:not(.swiper-slide){padding:10px;width:calc(100% / 3 - 0.01px)}.one-column #content .module-info_blocks-433 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.one-column #content .module-info_blocks-433 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.two-column #content .module-info_blocks-433 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.two-column #content .module-info_blocks-433 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.side-column .module-info_blocks-433 .module-item.swiper-slide{margin-right:0px;width:calc((100% - 0 * 0px) / 1 - 0.01px)}.side-column .module-info_blocks-433 .module-item:not(.swiper-slide){padding:0px;width:calc(100% / 1 - 0.01px)}.module-info_blocks-433 .module-item .info-block{justify-content:center}.module-info_blocks-433 .info-block .info-block-title{font-size:20px;color:rgba(0, 0, 0, 1);font-weight:700;text-transform:capitalize;display:block}.module-info_blocks-433 .info-block .info-block-text{display:block}.module-info_blocks-433 .info-block-content{padding-top:5px;display:flex}.module-info_blocks-433 .info-block{display:flex;flex-direction:column;align-items:center;text-align:center}.module-info_blocks-433 .info-block::before{align-self:center;background:rgba(255, 255, 255, 1)}.module-info_blocks-433 .info-block-img{align-self:center}.module-info_blocks-433 .info-block::before, .module-info_blocks-433 .info-block-img{border-width:3px;border-style:solid;border-color:rgba(51, 96, 167, 1);border-radius:99px}.module-info_blocks-433 .info-block .count-badge{display:none}.module-info_blocks-433 .module-body{margin-right:-10px;margin-left:-10px;background:rgba(51, 96, 167, 0.55);padding-top:40px;padding-right:350px;padding-bottom:40px;padding-left:350px;border-radius:12px}@media (max-width: 1024px){.module-info_blocks-433 .module-body{margin-right:5px;margin-left:5px;padding-top:40px;padding-right:200px;padding-bottom:40px;padding-left:200px}}@media (max-width: 470px){.module-info_blocks-433 .module-item.swiper-slide{margin-right:10px;width:calc((100% - 2 * 10px) / 3 - 0.01px)}.module-info_blocks-433 .module-item:not(.swiper-slide){padding:5px;width:calc(100% / 3 - 0.01px)}.module-info_blocks-433 .info-block .info-block-title{font-size:14px;color:rgba(0, 0, 0, 1);font-weight:700;text-transform:capitalize}.module-info_blocks-433 .module-body{margin:5px;padding-top:40px;padding-right:10px;padding-bottom:40px;padding-left:10px}}',
+  'fonts' => 
+  array (
+  ),
+  'settings' => 
+  array (
+    'schedule' => 
+    array (
+      'from' => '',
+      'to' => '',
+      'between' => true,
+    ),
+    'itemsPerRow' => 
+    array (
+      'c0' => 
+      array (
+        0 => 
+        array (
+          'items' => 3,
+          'spacing' => 20,
+        ),
+        470 => 
+        array (
+          'items' => 3,
+          'spacing' => 10,
+        ),
+      ),
+      'c1' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'c2' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+      'sc' => 
+      array (
+        0 => 
+        array (
+          'items' => 1,
+          'spacing' => 0,
+        ),
+      ),
+    ),
+    'imageDimensions' => 
+    array (
+      'width' => 150,
+      'height' => 150,
+      'resize' => 'fill',
+    ),
+    'status' => true,
+    'id' => 'info_blocks-69e79e20112d4',
+    'module_id' => 433,
+    'classes' => 
+    array (
+      0 => 'module',
+      1 => 'module-info_blocks',
+      2 => 'module-info_blocks-433',
+    ),
+    'items' => 
+    array (
+      1 => 
+      array (
+        'title' => 'Sun Screen',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '67',
+          'href' => 'http://localhost/matsuri/sun-screen',
+          'name' => 'Sun Screen',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'image',
+        'content' => '',
+        'button' => false,
+        'id' => '433-1',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-1',
+          2 => 'info-blocks',
+          3 => 'info-blocks-image',
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/catalog/website/featured-category/sun-screen-150x150h.jpg',
+        'image2x' => 'http://localhost/matsuri/image/cache/catalog/website/featured-category/sun-screen-300x300h.jpg',
+        'items' => 
+        array (
+        ),
+      ),
+      2 => 
+      array (
+        'title' => 'Facewash / Cleanser',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '64',
+          'href' => 'http://localhost/matsuri/facewash-cleanser',
+          'name' => 'Facewash / Cleanser',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'image',
+        'content' => '',
+        'button' => false,
+        'id' => '433-2',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-2',
+          2 => 'info-blocks',
+          3 => 'info-blocks-image',
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/catalog/website/featured-category/facewash-cleanser-150x150h.jpg',
+        'image2x' => 'http://localhost/matsuri/image/cache/catalog/website/featured-category/facewash-cleanser-300x300h.jpg',
+        'items' => 
+        array (
+        ),
+      ),
+      3 => 
+      array (
+        'title' => 'Men\'s Care',
+        'link' => 
+        array (
+          'type' => 'category',
+          'id' => '69',
+          'href' => 'http://localhost/matsuri/mens-care',
+          'name' => 'Men\'s Care',
+          'total' => NULL,
+          'attrs' => 
+          array (
+          ),
+          'classes' => 
+          array (
+          ),
+        ),
+        'type' => 'image',
+        'content' => '',
+        'button' => false,
+        'id' => '433-3',
+        'classes' => 
+        array (
+          0 => 'module-item',
+          1 => 'module-item-3',
+          2 => 'info-blocks',
+          3 => 'info-blocks-image',
+        ),
+        'image' => 'http://localhost/matsuri/image/cache/catalog/website/featured-category/mens-care-150x150.png',
+        'image2x' => 'http://localhost/matsuri/image/cache/catalog/website/featured-category/mens-care-300x300.png',
+        'items' => 
+        array (
+        ),
+      ),
+    ),
+  ),
+);
