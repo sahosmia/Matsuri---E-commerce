@@ -1,34 +1,32 @@
 <?php
 class ModelExtensionModuleInventoryModuleGift extends Model {
     public function install() {
-        $this->db->query("DROP TABLE IF EXISTS " . DB_PREFIX . "product_gift");
-        $this->db->query("CREATE TABLE " . DB_PREFIX . "product_gift (
-            product_gift_id INT(11) NOT NULL AUTO_INCREMENT,
+        $this->db->query("CREATE TABLE IF NOT EXISTS " . DB_PREFIX . "gift_product (
+            gift_product_id INT(11) NOT NULL AUTO_INCREMENT,
             gifted_name VARCHAR(255) NOT NULL,
             gift_date DATE NOT NULL,
-            PRIMARY KEY (product_gift_id)
+            PRIMARY KEY (gift_product_id)
         ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;");
 
-        $this->db->query("DROP TABLE IF EXISTS " . DB_PREFIX . "product_gift_item");
-        $this->db->query("CREATE TABLE " . DB_PREFIX . "product_gift_item (
-            product_gift_item_id INT(11) NOT NULL AUTO_INCREMENT,
-            product_gift_id INT(11) NOT NULL,
+        $this->db->query("CREATE TABLE IF NOT EXISTS " . DB_PREFIX . "gift_product_item (
+            gift_product_item_id INT(11) NOT NULL AUTO_INCREMENT,
+            gift_product_id INT(11) NOT NULL,
             product_id INT(11) NOT NULL,
             inventory_details_id INT(11) NOT NULL,
             quantity INT(11) NOT NULL,
             purchase_price DECIMAL(15,4) NOT NULL DEFAULT '0.0000',
             additional_cost DECIMAL(15,4) NOT NULL DEFAULT '0.0000',
-            PRIMARY KEY (product_gift_item_id)
+            PRIMARY KEY (gift_product_item_id)
         ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;");
     }
 
     public function addGift($data) {
-        $this->db->query("INSERT INTO " . DB_PREFIX . "product_gift SET
+        $this->db->query("INSERT INTO " . DB_PREFIX . "gift_product SET
             gifted_name = '" . $this->db->escape($data['gifted_name']) . "',
             gift_date = '" . $this->db->escape($data['gift_date']) . "'
         ");
 
-        $product_gift_id = $this->db->getLastId();
+        $gift_product_id = $this->db->getLastId();
 
         // Resolve Expense Category "Gift Item"
         $query = $this->db->query("SELECT category_id FROM " . DB_PREFIX . "expense_category WHERE name = 'Gift Item' LIMIT 1");
@@ -49,8 +47,8 @@ class ModelExtensionModuleInventoryModuleGift extends Model {
                     $purchase_price = $lot_info['purchase_price'];
                     $additional_cost = $lot_info['additional_cost'];
 
-                    $this->db->query("INSERT INTO " . DB_PREFIX . "product_gift_item SET
-                        product_gift_id = '" . (int)$product_gift_id . "',
+                    $this->db->query("INSERT INTO " . DB_PREFIX . "gift_product_item SET
+                        gift_product_id = '" . (int)$gift_product_id . "',
                         product_id = '" . (int)$product['product_id'] . "',
                         inventory_details_id = '" . (int)$product['inventory_details_id'] . "',
                         quantity = '" . (int)$product['quantity'] . "',
@@ -78,11 +76,11 @@ class ModelExtensionModuleInventoryModuleGift extends Model {
             }
         }
 
-        return $product_gift_id;
+        return $gift_product_id;
     }
 
     public function getGifts($data = array()) {
-        $sql = "SELECT * FROM " . DB_PREFIX . "product_gift WHERE 1=1";
+        $sql = "SELECT * FROM " . DB_PREFIX . "gift_product WHERE 1=1";
 
         if (!empty($data['filter_gifted_name'])) {
             $sql .= " AND gifted_name LIKE '%" . $this->db->escape($data['filter_gifted_name']) . "%'";
@@ -101,7 +99,7 @@ class ModelExtensionModuleInventoryModuleGift extends Model {
     }
 
     public function getTotalGifts($data = array()) {
-        $sql = "SELECT COUNT(*) AS total FROM " . DB_PREFIX . "product_gift WHERE 1=1";
+        $sql = "SELECT COUNT(*) AS total FROM " . DB_PREFIX . "gift_product WHERE 1=1";
 
         if (!empty($data['filter_gifted_name'])) {
             $sql .= " AND gifted_name LIKE '%" . $this->db->escape($data['filter_gifted_name']) . "%'";
@@ -111,8 +109,8 @@ class ModelExtensionModuleInventoryModuleGift extends Model {
         return $query->row['total'];
     }
 
-    public function getGiftItems($product_gift_id) {
-        $query = $this->db->query("SELECT pgi.*, pd.name AS product_name, i.inventory_lotnumber FROM " . DB_PREFIX . "product_gift_item pgi LEFT JOIN " . DB_PREFIX . "product_description pd ON (pgi.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "inventory_details id ON (pgi.inventory_details_id = id.inventory_details_id) LEFT JOIN " . DB_PREFIX . "inventory i ON (id.inventory_id = i.inventory_id) WHERE pgi.product_gift_id = '" . (int)$product_gift_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+    public function getGiftItems($gift_product_id) {
+        $query = $this->db->query("SELECT gpi.*, pd.name AS product_name, i.inventory_lotnumber FROM " . DB_PREFIX . "gift_product_item gpi LEFT JOIN " . DB_PREFIX . "product_description pd ON (gpi.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "inventory_details id ON (gpi.inventory_details_id = id.inventory_details_id) LEFT JOIN " . DB_PREFIX . "inventory i ON (id.inventory_id = i.inventory_id) WHERE gpi.gift_product_id = '" . (int)$gift_product_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
         return $query->rows;
     }
 

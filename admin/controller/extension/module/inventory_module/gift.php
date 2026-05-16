@@ -57,10 +57,10 @@ class ControllerExtensionModuleInventoryModuleGift extends Controller {
         $results = $this->model_extension_module_inventory_module_gift->getGifts($filter_data);
 
         foreach ($results as $result) {
-            $items = $this->model_extension_module_inventory_module_gift->getGiftItems($result['product_gift_id']);
+            $items = $this->model_extension_module_inventory_module_gift->getGiftItems($result['gift_product_id']);
 
             $data['gifts'][] = array(
-                'product_gift_id' => $result['product_gift_id'],
+                'gift_product_id' => $result['gift_product_id'],
                 'gifted_name'     => $result['gifted_name'],
                 'gift_date'       => date($this->language->get('date_format_short'), strtotime($result['gift_date'])),
                 'items'           => $items
