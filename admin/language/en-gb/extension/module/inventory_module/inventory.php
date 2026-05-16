@@ -17,6 +17,7 @@ $_['text_confirm']       = 'Are you sure?';
 $_['column_date']        = 'Date';
 $_['column_lotnumber']   = 'Lot Number';
 $_['column_products']    = 'Total Products';
+$_['column_damage_quantity'] = 'Damage Qty';
 $_['column_price']       = 'Total Price';
 $_['column_status']      = 'Status';
 $_['column_action']      = 'Action';
@@ -28,6 +29,7 @@ $_['entry_lotnumber']    = 'Lot Number';
 $_['entry_status']       = 'Status';
 $_['entry_supplier']     = 'Supplier Name';
 $_['entry_product']      = 'Choose Product';
+$_['entry_damage_quantity'] = 'Damage Quantity';
 
 // Statuses
 $_['text_pending']       = 'Pending';
@@ -52,3 +54,4 @@ $_['error_quantity']         = 'Quantity must be greater than 0!';
 $_['error_purchase_price']   = 'Purchase price must be greater than 0!';
 $_['error_sale_price']       = 'Sale price must be greater than 0!';
 $_['error_additional_cost']  = 'Additional cost cannot be empty (0 if none)!';
+$_['error_damage_quantity']  = 'Damage quantity cannot be negative or more than total quantity!';

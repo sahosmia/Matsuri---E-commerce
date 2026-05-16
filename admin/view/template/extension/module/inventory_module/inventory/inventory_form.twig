@@ -123,6 +123,7 @@
                         <tr class="active">
                             <th>Product</th>
                             <th class="text-right" width="100">Qty</th>
+                            <th class="text-right" width="100">{{ column_damage_quantity }}</th>
                             <th class="text-right" width="130">Purchase Price</th>
                             <th class="text-right" width="130">Add. Cost</th>
                             <th class="text-right" width="130">Total Price</th>
@@ -143,9 +144,17 @@
         
         {# Quantity Field #}
         <td class="{% if error_products[row].quantity %}has-error{% endif %}">
-            <input type="number" {{ product.is_merge_lot_quantity_to_main == 1 ? "readonly" : ""}} name="products[{{ row }}][quantity]" class="form-control text-right" value="{{ product.quantity }}">
+            <input type="number" {{ product.is_merge_lot_quantity_to_main == 1 ? "readonly" : ""}} name="products[{{ row }}][quantity]" class="form-control text-right qty" value="{{ product.quantity }}">
             {% if error_products[row].quantity %}
                 <div class="text-danger small">{{ error_products[row].quantity }}</div>
+            {% endif %}
+        </td>
+
+        {# Damage Quantity Field #}
+        <td class="{% if error_products[row].damage_quantity %}has-error{% endif %}">
+            <input type="number" name="products[{{ row }}][damage_quantity]" class="form-control text-right damage" value="{{ product.damage_quantity }}">
+            {% if error_products[row].damage_quantity %}
+                <div class="text-danger small">{{ error_products[row].damage_quantity }}</div>
             {% endif %}
         </td>
         
@@ -255,8 +264,9 @@ updateLotNumber();
             $('#input-product').val('');
             var html = '';
             html += '<tr id="row' + row + '">';
-            html += '<td>' + item['label'] + '<input type="hidden" name="products[' + row + '][product_id]" value="' + item['value'] + '<input type="hidden" name="products[' + row + '][is_merge_lot_quantity_to_main]" value="' + item['value'] + '"></td>';
+            html += '<td>' + item['label'] + '<input type="hidden" name="products[' + row + '][product_id]" value="' + item['value'] + '"><input type="hidden" name="products[' + row + '][is_merge_lot_quantity_to_main]" value="0"></td>';
             html += '<td><input type="number" name="products[' + row + '][quantity]" class="form-control qty" value="1"></td>';
+            html += '<td><input type="number" name="products[' + row + '][damage_quantity]" class="form-control damage" value="0"></td>';
             html += '<td><input type="text" name="products[' + row + '][purchase_price]" class="form-control purchase"></td>';
             html += '<td><input type="text" name="products[' + row + '][additional_cost]" class="form-control cost"></td>';
             html += '<td><input type="text" name="products[' + row + '][total_price]" class="form-control total" readonly></td>';

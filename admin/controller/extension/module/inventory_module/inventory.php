@@ -271,6 +271,7 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
                     'name'            => $product_info['name'],
                     'image'           => $this->model_tool_image->resize($product_info['image'] ?: 'no_image.png', 40, 40),
                     'quantity'        => $product['quantity'],
+                    'damage_quantity' => $product['damage_quantity'] ?? 0,
                     'purchase_price'  => $product['purchase_price'],
                     'sale_price'      => $product['sale_price'],
                     'additional_cost' => $product['additional_cost'],
@@ -286,6 +287,9 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
         $data['error_lotnumber'] = $this->error['lotnumber'] ?? '';
         $data['error_supplier'] = $this->error['supplier'] ?? '';
         $data['error_products'] = $this->error['products'] ?? [];
+
+        $data['column_damage_quantity'] = $this->language->get('column_damage_quantity');
+        $data['entry_damage_quantity'] = $this->language->get('entry_damage_quantity');
 
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
@@ -328,7 +332,8 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
                 // Price & Quantity Logic
                 $purchase_price  = $product['purchase_price'] ?? '';
                 $sale_price      = $product['sale_price'] ?? '';
-                $qty             = $product['quantity'] ?? 0;
+                $qty             = (int)($product['quantity'] ?? 0);
+                $damage_qty      = (int)($product['damage_quantity'] ?? 0);
                 $additional_cost = $product['additional_cost'] ?? 0;
     
                 if ($purchase_price === '' || (float)$purchase_price < 0) {
@@ -345,6 +350,10 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
     
                 if ((int)$qty <= 0) {
                     $this->error['products'][$key]['quantity'] = $this->language->get('error_quantity');
+                }
+
+                if ($damage_qty < 0 || $damage_qty > $qty) {
+                    $this->error['products'][$key]['damage_quantity'] = $this->language->get('error_damage_quantity');
                 }
                 
                 // Note: If you want to check if (purchase + additional) > sale, you can add that logic here.
@@ -449,6 +458,7 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
             $results = $this->model_extension_module_inventory_module_inventory->getInventoryDetails($inventory_id, $filter_data);
           
             $total_qty = 0;
+            $total_damage_qty = 0;
             $total_current_qty = 0;
             $total_purchase = 0;
             $total_additional = 0;
@@ -467,6 +477,7 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
         
             foreach ($results as $result) {
                 $total_qty += $result['quantity'];
+                $total_damage_qty += $result['damage_quantity'];
                 $total_current_qty += $result['current_quantity'];
                 $total_purchase += $result['purchase_price'];
                 $total_additional += $result['additional_cost'];
@@ -487,6 +498,7 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
                     'product_id'        => $result['product_id'],
                     'name'              => $result['product_name'], 
                     'quantity'          => $result['quantity'],
+                    'damage_quantity'   => $result['damage_quantity'],
                     'current_quantity'  => $result['current_quantity'],
                     'purchase_price'    => $this->currency->format($result['purchase_price'], $this->config->get('config_currency')),
                     'additional_cost'   => $this->currency->format($result['additional_cost'], $this->config->get('config_currency')),
@@ -510,6 +522,7 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
             }
             
             $data['total_qty'] = $total_qty;
+            $data['total_damage_qty'] = $total_damage_qty;
             $data['total_current_qty'] = $total_current_qty;
             $data['total_pending_qty'] = $total_pending_qty;
             $data['total_accepted_qty'] = $total_accepted_qty;

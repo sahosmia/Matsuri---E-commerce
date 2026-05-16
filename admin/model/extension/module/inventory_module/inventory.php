@@ -31,11 +31,15 @@ class ModelExtensionModuleInventoryModuleInventory extends Model {
 
         if (!empty($data['products'])) {
             foreach ($data['products'] as $product) {
+                $damage_quantity = isset($product['damage_quantity']) ? (int)$product['damage_quantity'] : 0;
+                $current_quantity = (int)$product['quantity'] - $damage_quantity;
+
                 $this->db->query("INSERT INTO " . DB_PREFIX . "inventory_details SET
                     inventory_id = '" . (int)$inventory_id . "',
                     product_id = '" . (int)$product['product_id'] . "',
                     quantity = '" . (int)$product['quantity'] . "',
-                    current_quantity = '" . (int)$product['quantity'] . "',
+                    damage_quantity = '" . (int)$damage_quantity . "',
+                    current_quantity = '" . (int)$current_quantity . "',
                     sale_price = '" . (float)$product['sale_price'] . "',
                     purchase_price = '" . (float)$product['purchase_price'] . "',
                     additional_cost = '" . (float)$product['additional_cost'] . "',
@@ -80,11 +84,15 @@ class ModelExtensionModuleInventoryModuleInventory extends Model {
         // Insert new details and update stock
         if (!empty($data['products'])) {
             foreach ($data['products'] as $product) {
+                $damage_quantity = isset($product['damage_quantity']) ? (int)$product['damage_quantity'] : 0;
+                $current_quantity = (int)$product['quantity'] - $damage_quantity;
+
                 $this->db->query("INSERT INTO " . DB_PREFIX . "inventory_details SET
                     inventory_id = '" . (int)$inventory_id . "',
                     product_id = '" . (int)$product['product_id'] . "',
                     quantity = '" . (int)$product['quantity'] . "',
-                    current_quantity = '" . (int)$product['quantity'] . "',
+                    damage_quantity = '" . (int)$damage_quantity . "',
+                    current_quantity = '" . (int)$current_quantity . "',
                     is_merge_lot_quantity_to_main = '" . (int)$product['is_merge_lot_quantity_to_main'] . "',
                     sale_price = '" . (float)$product['sale_price'] . "',
                     purchase_price = '" . (float)$product['purchase_price'] . "',
