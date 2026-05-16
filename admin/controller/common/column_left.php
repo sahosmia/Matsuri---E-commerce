@@ -173,6 +173,43 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 
+			// Inventory
+			$inventory = array();
+
+			if ($this->user->hasPermission('access', 'extension/module/inventory_module/inventory')) {
+				$inventory[] = array(
+					'name'	   => 'Inventory Manager',
+					'href'     => $this->url->link('extension/module/inventory_module/inventory', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()
+				);
+			}
+
+			if ($this->user->hasPermission('access', 'extension/module/inventory_module/gift')) {
+				$inventory[] = array(
+					'name'	   => 'Product Gifts',
+					'href'     => $this->url->link('extension/module/inventory_module/gift', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()
+				);
+			}
+
+			if ($this->user->hasPermission('access', 'extension/module/inventory_module/expense')) {
+				$inventory[] = array(
+					'name'	   => 'Expenses',
+					'href'     => $this->url->link('extension/module/inventory_module/expense', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()
+				);
+			}
+
+			if ($inventory) {
+				$data['menus'][] = array(
+					'id'       => 'menu-inventory',
+					'icon'	   => 'fa-cubes',
+					'name'	   => 'Inventory',
+					'href'     => '',
+					'children' => $inventory
+				);
+			}
+
 			// Design
 			$design = array();
 
