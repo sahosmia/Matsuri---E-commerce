@@ -1,6 +1,83 @@
 <?php
 class ControllerExtensionModuleInventoryModuleOutOfStock extends Controller { 
 
+	public function export() {
+		if (!$this->user->hasPermission('modify', 'extension/module/inventory_module/out_of_stock')) {
+			$this->response->redirect($this->url->link('error/not_found', 'user_token=' . $this->session->data['user_token'], true));
+		}
+
+		$this->load->language('extension/module/inventory_module/out_of_stock');
+
+		$this->load->model('extension/module/inventory_module/out_of_stock');
+
+		if (isset($this->request->get['filter_name'])) {
+			$filter_name = $this->request->get['filter_name'];
+		} else {
+			$filter_name = '';
+		}
+
+		if (isset($this->request->get['filter_sku'])) {
+			$filter_sku = $this->request->get['filter_sku'];
+		} else {
+			$filter_sku = '';
+		}
+
+		if (isset($this->request->get['sort'])) {
+			$sort = $this->request->get['sort'];
+		} else {
+			$sort = 'pd.name';
+		}
+
+		if (isset($this->request->get['order'])) {
+			$order = $this->request->get['order'];
+		} else {
+			$order = 'ASC';
+		}
+
+		$filter_data = array(
+			'filter_name' => $filter_name,
+			'filter_sku'  => $filter_sku,
+			'sort'        => $sort,
+			'order'       => $order
+		);
+
+		$results = $this->model_extension_module_inventory_module_out_of_stock->getOutOfStockProducts($filter_data);
+
+		header('Content-Type: text/csv; charset=utf-8');
+		header('Content-Disposition: attachment; filename=out_of_stock_report.csv');
+
+		$output = fopen('php://output', 'w');
+
+		fputcsv($output, array(
+			$this->language->get('column_name'),
+			$this->language->get('text_category'),
+			$this->language->get('column_sku'),
+			$this->language->get('text_self_weight'),
+			$this->language->get('text_weight'),
+			$this->language->get('text_unit'),
+			$this->language->get('text_purchase_price'),
+			$this->language->get('column_price'),
+			$this->language->get('column_quantity')
+		));
+
+		foreach ($results as $result) {
+			fputcsv($output, array(
+				$result['name'],
+				$result['category'] ? $result['category'] : 'None',
+				"\t" . $result['sku'],
+				number_format($result['weight'], 2),
+				number_format($result['unit_weight'], 2),
+				$this->weight->getUnit($result['weight_class_id']),
+				$this->currency->format($result['purchase_price'], $this->session->data['currency'], '', false),
+				$this->currency->format($result['price'], $this->session->data['currency'], '', false),
+				$result['quantity']
+			));
+		}
+
+		fclose($output);
+		exit();
+	}
+
     public function index() {
         $this->load->language('extension/module/inventory_module/out_of_stock'); 
         $this->document->setTitle($this->language->get('heading_title'));
@@ -9,14 +86,35 @@ class ControllerExtensionModuleInventoryModuleOutOfStock extends Controller {
     
         $user_token = $this->session->data['user_token'];
         
-        // 1. Parameters (Sort, Order, Page)
-        $sort = isset($this->request->get['sort']) ? $this->request->get['sort'] : 'p.quantity';
+        // 1. Parameters (Filters, Sort, Order, Page)
+        if (isset($this->request->get['filter_name'])) {
+            $filter_name = $this->request->get['filter_name'];
+        } else {
+            $filter_name = '';
+        }
+
+        if (isset($this->request->get['filter_sku'])) {
+            $filter_sku = $this->request->get['filter_sku'];
+        } else {
+            $filter_sku = '';
+        }
+
+        $sort = isset($this->request->get['sort']) ? $this->request->get['sort'] : 'pd.name';
         $order = isset($this->request->get['order']) ? $this->request->get['order'] : 'ASC';
         $page = isset($this->request->get['page']) ? (int)$this->request->get['page'] : 1;
         $limit = $this->config->get('config_limit_admin');
 
         // 2. Sorting Links and URL Construction
         $url = '';
+
+        if (isset($this->request->get['filter_name'])) {
+            $url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
+        }
+
+        if (isset($this->request->get['filter_sku'])) {
+            $url .= '&filter_sku=' . urlencode(html_entity_decode($this->request->get['filter_sku'], ENT_QUOTES, 'UTF-8'));
+        }
+
         if (isset($this->request->get['sort'])) $url .= '&sort=' . $this->request->get['sort'];
         if (isset($this->request->get['order'])) $url .= '&order=' . $this->request->get['order'];
         
@@ -32,27 +130,39 @@ class ControllerExtensionModuleInventoryModuleOutOfStock extends Controller {
         );
 
         // 4. Sorting Links Logic
+        $url = '';
+
+        if (isset($this->request->get['filter_name'])) {
+            $url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
+        }
+
+        if (isset($this->request->get['filter_sku'])) {
+            $url .= '&filter_sku=' . urlencode(html_entity_decode($this->request->get['filter_sku'], ENT_QUOTES, 'UTF-8'));
+        }
+
         $url_order = ($order == 'ASC') ? 'DESC' : 'ASC';
         $base_route = 'extension/module/inventory_module/out_of_stock';
         $token_url = 'user_token=' . $user_token;
 
-        $data['sort_name']            = $this->url->link($base_route, $token_url . '&sort=pd.name' . '&order=' . $url_order, true);
-        $data['sort_sku']             = $this->url->link($base_route, $token_url . '&sort=p.sku' . '&order=' . $url_order, true);
-        $data['sort_quantity']        = $this->url->link($base_route, $token_url . '&sort=p.quantity' . '&order=' . $url_order, true);
-        $data['sort_price']           = $this->url->link($base_route, $token_url . '&sort=p.price' . '&order=' . $url_order, true);
-        $data['sort_status']           = $this->url->link($base_route, $token_url . '&sort=p.status' . '&order=' . $url_order, true);
-        $data['sort_category']        = $this->url->link($base_route, $token_url . '&sort=category' . '&order=' . $url_order, true);
-        $data['sort_purchase_price']  = $this->url->link($base_route, $token_url . '&sort=purchase_price' . '&order=' . $url_order, true);
-        $data['sort_weight']          = $this->url->link($base_route, $token_url . '&sort=p.weight' . '&order=' . $url_order, true);
-        $data['sort_unit_weight']          = $this->url->link($base_route, $token_url . '&sort=p.unit_weight' . '&order=' . $url_order, true);
-        $data['sort_sl']              = $this->url->link($base_route, $token_url . '&sort=p.product_id' . '&order=' . $url_order, true);
+        $data['sort_name']            = $this->url->link($base_route, $token_url . '&sort=pd.name' . '&order=' . $url_order . $url, true);
+        $data['sort_sku']             = $this->url->link($base_route, $token_url . '&sort=p.sku' . '&order=' . $url_order . $url, true);
+        $data['sort_quantity']        = $this->url->link($base_route, $token_url . '&sort=p.quantity' . '&order=' . $url_order . $url, true);
+        $data['sort_price']           = $this->url->link($base_route, $token_url . '&sort=p.price' . '&order=' . $url_order . $url, true);
+        $data['sort_status']           = $this->url->link($base_route, $token_url . '&sort=p.status' . '&order=' . $url_order . $url, true);
+        $data['sort_category']        = $this->url->link($base_route, $token_url . '&sort=category' . '&order=' . $url_order . $url, true);
+        $data['sort_purchase_price']  = $this->url->link($base_route, $token_url . '&sort=purchase_price' . '&order=' . $url_order . $url, true);
+        $data['sort_weight']          = $this->url->link($base_route, $token_url . '&sort=p.weight' . '&order=' . $url_order . $url, true);
+        $data['sort_unit_weight']          = $this->url->link($base_route, $token_url . '&sort=p.unit_weight' . '&order=' . $url_order . $url, true);
+        $data['sort_sl']              = $this->url->link($base_route, $token_url . '&sort=p.product_id' . '&order=' . $url_order . $url, true);
 
         // 5. Data Retrieval
         $filter_data = [
-            'sort'  => $sort,
-            'order' => $order,
-            'start' => ($page - 1) * $limit,
-            'limit' => $limit
+            'filter_name' => $filter_name,
+            'filter_sku'  => $filter_sku,
+            'sort'        => $sort,
+            'order'       => $order,
+            'start'       => ($page - 1) * $limit,
+            'limit'       => $limit
         ];
         
         $results = $this->model_extension_module_inventory_module_out_of_stock->getOutOfStockProducts($filter_data);
@@ -85,6 +195,8 @@ class ControllerExtensionModuleInventoryModuleOutOfStock extends Controller {
 
         // 6. Pagination & Meta Data
         $data['user_token'] = $user_token;
+        $data['filter_name'] = $filter_name;
+        $data['filter_sku'] = $filter_sku;
         $data['sort'] = $sort;
         $data['order'] = $order;
         $data['product_total'] = $product_total;
@@ -106,6 +218,11 @@ class ControllerExtensionModuleInventoryModuleOutOfStock extends Controller {
         $data['column_image'] = $this->language->get('column_image');
         $data['column_name'] = $this->language->get('column_name');
         $data['text_no_results'] = $this->language->get('text_no_results');
+        $data['text_filter'] = $this->language->get('text_filter');
+        $data['entry_name'] = $this->language->get('entry_name');
+        $data['entry_sku'] = $this->language->get('entry_sku');
+        $data['button_filter'] = $this->language->get('button_filter');
+        $data['button_reset'] = $this->language->get('button_reset');
 
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
