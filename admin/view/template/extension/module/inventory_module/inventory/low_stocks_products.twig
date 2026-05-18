@@ -113,25 +113,22 @@ $('#button-export').on('click', async function() {
         { header: 'Sale Price', key: 's_price', width: 15 },
         { header: 'Stock Qty', key: 'qty', width: 15 }
     ];
-
+    
     $('.table tbody tr').each(function() {
         const cells = $(this).find('td');
         
-        if (cells.length > 1) {
-            const statusText = $(cells[9]).text().trim();
-            const qtyMatch = statusText.match(/\(([^)]+)\)/);
-            const qty = qtyMatch ? qtyMatch[1] : '0';
-
+        // Ensure the row has all 9 columns
+        if (cells.length >= 9) {
             worksheet.addRow({
                 sl: $(cells[0]).text().trim(),
-                name: $(cells[2]).text().trim(),
-                category: $(cells[3]).text().trim(),
-                sku: $(cells[4]).text().trim(),
-                weight: $(cells[5]).text().trim(),
-                unit_weight: $(cells[5]).text().trim(),
-                p_price: $(cells[6]).text().trim(),
-                s_price: $(cells[8]).text().trim(),
-                qty: parseInt(qty)
+                name: $(cells[1]).text().trim(),          // Fixed: Was index 2
+                category: $(cells[2]).text().trim(),      // Fixed: Was index 3
+                sku: $(cells[3]).text().trim(),           // Fixed: Was index 4
+                weight: $(cells[4]).text().trim(),        // Fixed: Was index 5
+                unit_weight: $(cells[5]).text().trim(),   // Fixed: Was index 5 duplicate
+                p_price: $(cells[6]).text().trim(),       // Fixed: Was index 6
+                s_price: $(cells[7]).text().trim(),       // Fixed: Was index 8
+                qty: parseInt($(cells[8]).text().trim()) || 0 // Fixed: Grabs index 8 directly
             });
         }
     });

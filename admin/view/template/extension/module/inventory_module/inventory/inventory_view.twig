@@ -56,6 +56,7 @@
                   <td class="text-right">
                     <a href="{{ sort_qty }}" class="{% if sort == 'id.quantity' %}{{ order|lower }}{% endif %}">Quantity</a>
                   </td>
+                  <td class="text-right">{{ column_damage_quantity }}</td>
                   <td class="text-right">
                     <a href="{{ sort_current }}" class="{% if sort == 'id.current_quantity' %}{{ order|lower }}{% endif %}">Current Quantity</a>
                   </td>
@@ -76,6 +77,7 @@
                 <tr>
                   <td class="text-left">{{ product.name }}</td>
                   <td class="text-right">{{ product.quantity }}</td>
+                  <td class="text-right">{{ product.damage_quantity }}</td>
                   <td class="text-right">{{ product.current_quantity }}</td>
                   <td class="text-left" style="font-size: 11px; background-color: #fcfcfc;">
                     <div><span class="text-muted">Purchase:</span> {{ product.purchase_price }}</div>
@@ -110,6 +112,7 @@
               <tr style="font-weight: bold; background-color: #f9f9f9;">
                 <td class="text-left">Total:</td>
                 <td class="text-right">{{ total_qty }}</td>
+                <td class="text-right">{{ total_damage_qty }}</td>
                 <td class="text-right">{{ total_current_qty }}</td>
                 <td class="text-left" style="font-size: 12px; background-color: #f5f5f5;">
                     <div><span class="text-muted">Pur:</span> {{ total_purchase }}</div>

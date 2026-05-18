@@ -265,9 +265,9 @@ class ControllerExtensionModuleInventoryModuleExpense extends Controller {
 
     // Category Edit
     public function editCategory() {
+
         $this->load->language('extension/module/inventory_module/expense');
         $this->load->model('extension/module/inventory_module/expense');
-    
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateCategoryForm()) {
             $this->model_extension_module_inventory_module_expense->editCategory($this->request->get['category_id'], $this->request->post);
             $this->session->data['success'] = "Success: Category updated successfully!";

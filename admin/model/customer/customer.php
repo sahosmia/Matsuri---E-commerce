@@ -132,6 +132,7 @@ class ModelCustomerCustomer extends Model {
 		$sort_data = array(
 			'name',
 			'c.email',
+			'c.telephone',
 			'customer_group',
 			'c.status',
 			'c.ip',
@@ -253,6 +254,10 @@ class ModelCustomerCustomer extends Model {
 
 		if (!empty($data['filter_customer_group_id'])) {
 			$implode[] = "customer_group_id = '" . (int)$data['filter_customer_group_id'] . "'";
+		}
+
+		if (!empty($data['filter_telephone'])) {
+			$implode[] = "telephone LIKE '" . $this->db->escape($data['filter_telephone']) . "%'";
 		}
 
 		if (!empty($data['filter_ip'])) {

@@ -31,7 +31,10 @@
                       <a href="{{ sort_weight }}" class="{{ sort == 'p.weight' ? order|lower : '' }}">Self Weight</a>
                     </td>
                   <td class="text-right">
-                      <a href="{{ sort_unit_weight }}" class="{{ sort == 'p.unit_weight' ? order|lower : '' }}">Unit Weight</a>
+                      <a href="{{ sort_unit_weight }}" class="{{ sort == 'p.unit_weight' ? order|lower : '' }}">Weight</a>
+                    </td>
+                  <td class="text-right">
+                      Unit
                     </td>
                     <td class="text-right">
                       <a href="{{ sort_purchase_price }}" class="{{ sort == 'purchase_price' ? order|lower : '' }}">Purchase Price</a>
@@ -61,7 +64,8 @@
                     <td class="text-left">{{ product.name }}</td>
                     <td class="text-left">{{ product.sku }}</td>
                     <td class="text-right">{{ product.weight }}</td>
-                    <td class="text-right">{{ product.unit_weight }} {{ product.weight_class }}</td>
+                    <td class="text-right">{{ product.unit_weight }}</td>
+                    <td class="text-right">{{ product.weight_class }}</td>
                     <td class="text-right">{{ product.purchase_price }}</td>
                     <td class="text-right">{{ product.price }}</td>
                     <td class="text-right">
@@ -108,34 +112,32 @@ $('#button-export').on('click', async function() {
         { header: 'Category', key: 'category', width: 20 },
         { header: 'SKU', key: 'sku', width: 20 },
         { header: 'Self Weight', key: 'weight', width: 15 },
-        { header: 'Unit Weight', key: 'unit_weight', width: 15 },
+        { header: 'Weight', key: 'unit_weight', width: 15 },
+        { header: 'Unit', key: 'weight_class', width: 15 },
         { header: 'Purchase Price', key: 'p_price', width: 15 },
         { header: 'Sale Price', key: 's_price', width: 15 },
         { header: 'Stock Qty', key: 'qty', width: 15 }
     ];
-
+    
     $('.table tbody tr').each(function() {
         const cells = $(this).find('td');
         
-        if (cells.length > 1) {
-            const statusText = $(cells[9]).text().trim();
-            const qtyMatch = statusText.match(/\(([^)]+)\)/);
-            const qty = qtyMatch ? qtyMatch[1] : '0';
-
+        // Ensure the row has all 9 columns
+        if (cells.length >= 9) {
             worksheet.addRow({
                 sl: $(cells[0]).text().trim(),
-                name: $(cells[2]).text().trim(),
-                category: $(cells[3]).text().trim(),
-                sku: $(cells[4]).text().trim(),
-                weight: $(cells[5]).text().trim(),
-                unit_weight: $(cells[5]).text().trim(),
-                p_price: $(cells[6]).text().trim(),
-                s_price: $(cells[8]).text().trim(),
-                qty: parseInt(qty)
+                category: $(cells[1]).text().trim(),      // Fixed: Was index 3
+                name: $(cells[2]).text().trim(),          // Fixed: Was index 2
+                sku: $(cells[3]).text().trim(),           // Fixed: Was index 4
+                weight: $(cells[4]).text().trim(),        // Fixed: Was index 5
+                unit_weight: $(cells[5]).text().trim(),   // Fixed: Was index 5 duplicate
+                weight_class: $(cells[6]).text().trim(),   // Fixed: Was index 5 duplicate
+                p_price: $(cells[7]).text().trim(),       // Fixed: Was index 6
+                s_price: $(cells[8]).text().trim(),       // Fixed: Was index 8
+                qty: parseInt($(cells[9]).text().trim()) || 0 // Fixed: Grabs index 8 directly
             });
         }
     });
-
     // Formatting Header
     const headerRow = worksheet.getRow(1);
     headerRow.font = { bold: true, color: { argb: 'FFFFFF' } };

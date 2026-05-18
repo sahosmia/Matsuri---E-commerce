@@ -3751,3 +3751,57 @@ Stack trace:
              ORDER BY aid.inventory_details_id DESC LIMIT 1) AS purchase_price,
             (SELECT aid.additional_cost FROM ac_inventory_details aid 
              WHERE aid.product_id = p.pr in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php on line 48
+[16-May-2026 15:16:46 Asia/Dhaka] PHP Fatal error:  Uncaught Exception: Error: Table 'ac_product_gift' already exists<br />Error No: 1050<br />CREATE TABLE ac_product_gift (
+            product_gift_id INT(11) NOT NULL AUTO_INCREMENT,
+            gifted_name VARCHAR(255) NOT NULL,
+            gift_date DATE NOT NULL,
+            PRIMARY KEY (product_gift_id)
+        ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci; in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php:48
+Stack trace:
+#0 /home/againsof/matsuri.againcart.net/system/storage/modification/system/library/db.php(55): DB\MySQLi->query('CREATE TABLE ac...')
+#1 /home/againsof/matsuri.againcart.net/admin/model/extension/module/inventory_module/gift.php(4): DB->query('CREATE TABLE ac...')
+#2 /home/againsof/matsuri.againcart.net/system/storage/modification/system/engine/loader.php(256): ModelExtensionModuleInventoryModuleGift->install()
+#3 /home/againsof/matsuri.againcart.net/system/engine/proxy.php(47): Loader->{closure}(Array, Array)
+#4 /home/againsof/matsuri.againcart.net in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php on line 48
+[16-May-2026 15:18:35 Asia/Dhaka] PHP Fatal error:  Uncaught Exception: Error: Table 'againsof_matsuri.ac_gift_product' doesn't exist<br />Error No: 1146<br />INSERT INTO ac_gift_product SET 
+            gifted_name = 'new',
+            gift_date = '2026-05-16'
+         in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php:48
+Stack trace:
+#0 /home/againsof/matsuri.againcart.net/system/storage/modification/system/library/db.php(55): DB\MySQLi->query('INSERT INTO ac_...')
+#1 /home/againsof/matsuri.againcart.net/admin/model/extension/module/inventory_module/gift.php(26): DB->query('INSERT INTO ac_...')
+#2 /home/againsof/matsuri.againcart.net/system/storage/modification/system/engine/loader.php(256): ModelExtensionModuleInventoryModuleGift->addGift(Array)
+#3 /home/againsof/matsuri.againcart.net/system/engine/proxy.php(47): Loader->{closure}(Array, Array)
+#4 /home/againsof/matsuri.againcart.net/admin/controller/extension/module/inventory_module/gift.php(103): Proxy->__call('addGift', Array)
+#5 /home/againsof/matsuri.againcart.net/system/storage/mo in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php on line 48
+[16-May-2026 15:22:20 Asia/Dhaka] PHP Fatal error:  Uncaught Exception: Error: Table 'againsof_matsuri.ac_gift_product' doesn't exist<br />Error No: 1146<br />INSERT INTO ac_gift_product SET 
+            gifted_name = 'new',
+            gift_date = '2026-05-16'
+         in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php:48
+Stack trace:
+#0 /home/againsof/matsuri.againcart.net/system/storage/modification/system/library/db.php(55): DB\MySQLi->query('INSERT INTO ac_...')
+#1 /home/againsof/matsuri.againcart.net/admin/model/extension/module/inventory_module/gift.php(26): DB->query('INSERT INTO ac_...')
+#2 /home/againsof/matsuri.againcart.net/system/storage/modification/system/engine/loader.php(256): ModelExtensionModuleInventoryModuleGift->addGift(Array)
+#3 /home/againsof/matsuri.againcart.net/system/engine/proxy.php(47): Loader->{closure}(Array, Array)
+#4 /home/againsof/matsuri.againcart.net/admin/controller/extension/module/inventory_module/gift.php(103): Proxy->__call('addGift', Array)
+#5 /home/againsof/matsuri.againcart.net/system/storage/mo in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php on line 48
+[16-May-2026 15:25:19 Asia/Dhaka] PHP Fatal error:  Uncaught Exception: Error: Table 'againsof_matsuri.ac_gift_product' doesn't exist<br />Error No: 1146<br />INSERT INTO ac_gift_product SET 
+            gifted_name = 'asdfa',
+            gift_date = '2026-05-16'
+         in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php:48
+Stack trace:
+#0 /home/againsof/matsuri.againcart.net/system/storage/modification/system/library/db.php(55): DB\MySQLi->query('INSERT INTO ac_...')
+#1 /home/againsof/matsuri.againcart.net/admin/model/extension/module/inventory_module/gift.php(26): DB->query('INSERT INTO ac_...')
+#2 /home/againsof/matsuri.againcart.net/system/storage/modification/system/engine/loader.php(256): ModelExtensionModuleInventoryModuleGift->addGift(Array)
+#3 /home/againsof/matsuri.againcart.net/system/engine/proxy.php(47): Loader->{closure}(Array, Array)
+#4 /home/againsof/matsuri.againcart.net/admin/controller/extension/module/inventory_module/gift.php(103): Proxy->__call('addGift', Array)
+#5 /home/againsof/matsuri.againcart.net/system/storage/ in /home/againsof/matsuri.againcart.net/system/library/db/mysqli.php on line 48
+[18-May-2026 10:35:57 Asia/Dhaka] PHP Fatal error:  require_once(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/admin/controller/customer/customer.php on line 1677
+[18-May-2026 10:36:02 Asia/Dhaka] PHP Fatal error:  require_once(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/admin/controller/customer/customer.php on line 1677
+[18-May-2026 10:41:54 Asia/Dhaka] PHP Fatal error:  require_once(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/admin/controller/customer/customer.php on line 1677
+[18-May-2026 10:43:50 Asia/Dhaka] PHP Fatal error:  require_once(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/admin/controller/customer/customer.php on line 1677
+[18-May-2026 10:43:51 Asia/Dhaka] PHP Fatal error:  require_once(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/admin/controller/customer/customer.php on line 1677
+[18-May-2026 10:43:52 Asia/Dhaka] PHP Fatal error:  require_once(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/admin/controller/customer/customer.php on line 1677
+[18-May-2026 10:43:53 Asia/Dhaka] PHP Fatal error:  require_once(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/admin/controller/customer/customer.php on line 1677
+[18-May-2026 10:43:54 Asia/Dhaka] PHP Fatal error:  require_once(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/admin/controller/customer/customer.php on line 1677
+[18-May-2026 11:45:15 Asia/Dhaka] PHP Fatal error:  require(): Failed opening required '/home/againsof/matsuri.againcart.net/system/library/PHPExcel/Autoloader.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/againsof/matsuri.againcart.net/system/library/PHPExcel.php on line 6
