@@ -98,7 +98,7 @@ class ControllerCustomerCustomer extends Controller {
 			fputcsv($output, array(
 				$result['name'],
 				$result['email'],
-				$result['telephone'],
+				"\t" . $result['telephone'],
 				$result['customer_group'],
 				($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
 				$result['ip'],
