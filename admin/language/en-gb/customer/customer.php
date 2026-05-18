@@ -40,6 +40,17 @@ $_['column_amount']             = 'Amount';
 $_['column_points']             = 'Points';
 $_['column_ip']                 = 'IP';
 $_['column_total']              = 'Total Accounts';
+$_['column_telephone']          = 'Telephone';
+$_['column_customer_id']        = 'Customer ID';
+$_['column_firstname']          = 'First Name';
+$_['column_lastname']           = 'Last Name';
+$_['column_company']            = 'Company';
+$_['column_address_1']          = 'Address 1';
+$_['column_address_2']          = 'Address 2';
+$_['column_city']               = 'City';
+$_['column_postcode']           = 'Postcode';
+$_['column_country']            = 'Country';
+$_['column_zone']               = 'Region / State';
 $_['column_action']             = 'Action';
 
 // Entry
@@ -82,6 +93,9 @@ $_['entry_points']              = 'Points';
 $_['entry_name']                = 'Customer Name';
 $_['entry_ip']                  = 'IP';
 $_['entry_date_added']          = 'Date Added';
+
+// Button
+$_['button_export']             = 'Export';
 
 // Help
 $_['help_safe']                 = 'Set to true to avoid this customer from being caught by the anti-fraud system';

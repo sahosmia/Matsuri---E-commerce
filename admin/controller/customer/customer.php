@@ -2,6 +2,134 @@
 class ControllerCustomerCustomer extends Controller {
 	private $error = array();
 
+	public function export() {
+		if (!$this->user->hasPermission('modify', 'customer/customer')) {
+			$this->response->redirect($this->url->link('error/not_found', 'user_token=' . $this->session->data['user_token'], true));
+		}
+
+		$this->load->language('customer/customer');
+
+		$this->load->model('customer/customer');
+
+		if (isset($this->request->get['filter_name'])) {
+			$filter_name = $this->request->get['filter_name'];
+		} else {
+			$filter_name = '';
+		}
+
+		if (isset($this->request->get['filter_email'])) {
+			$filter_email = $this->request->get['filter_email'];
+		} else {
+			$filter_email = '';
+		}
+
+		if (isset($this->request->get['filter_customer_group_id'])) {
+			$filter_customer_group_id = $this->request->get['filter_customer_group_id'];
+		} else {
+			$filter_customer_group_id = '';
+		}
+
+		if (isset($this->request->get['filter_status'])) {
+			$filter_status = $this->request->get['filter_status'];
+		} else {
+			$filter_status = '';
+		}
+
+		if (isset($this->request->get['filter_telephone'])) {
+			$filter_telephone = $this->request->get['filter_telephone'];
+		} else {
+			$filter_telephone = '';
+		}
+
+		if (isset($this->request->get['filter_ip'])) {
+			$filter_ip = $this->request->get['filter_ip'];
+		} else {
+			$filter_ip = '';
+		}
+
+		if (isset($this->request->get['filter_date_added'])) {
+			$filter_date_added = $this->request->get['filter_date_added'];
+		} else {
+			$filter_date_added = '';
+		}
+
+		if (isset($this->request->get['sort'])) {
+			$sort = $this->request->get['sort'];
+		} else {
+			$sort = 'name';
+		}
+
+		if (isset($this->request->get['order'])) {
+			$order = $this->request->get['order'];
+		} else {
+			$order = 'ASC';
+		}
+
+		$filter_data = array(
+			'filter_name'              => $filter_name,
+			'filter_email'             => $filter_email,
+			'filter_customer_group_id' => $filter_customer_group_id,
+			'filter_status'            => $filter_status,
+			'filter_telephone'         => $filter_telephone,
+			'filter_ip'                => $filter_ip,
+			'filter_date_added'        => $filter_date_added,
+			'sort'                     => $sort,
+			'order'                    => $order
+		);
+
+		$results = $this->model_customer_customer->getCustomers($filter_data);
+
+		header('Content-Type: text/csv; charset=utf-8');
+		header('Content-Disposition: attachment; filename=customers.csv');
+
+		$output = fopen('php://output', 'w');
+
+		fputcsv($output, array(
+			$this->language->get('column_customer_id'),
+			$this->language->get('column_firstname'),
+			$this->language->get('column_lastname'),
+			$this->language->get('column_email'),
+			$this->language->get('column_telephone'),
+			$this->language->get('column_customer_group'),
+			$this->language->get('column_status'),
+			$this->language->get('column_ip'),
+			$this->language->get('column_date_added'),
+			$this->language->get('column_company'),
+			$this->language->get('column_address_1'),
+			$this->language->get('column_address_2'),
+			$this->language->get('column_city'),
+			$this->language->get('column_postcode'),
+			$this->language->get('column_country'),
+			$this->language->get('column_zone')
+		));
+
+		foreach ($results as $result) {
+			$address_info = $this->model_customer_customer->getAddress($result['address_id']);
+
+			fputcsv($output, array(
+				$result['customer_id'],
+				$result['firstname'],
+				$result['lastname'],
+				$result['email'],
+				"\t" . $result['telephone'],
+				$result['customer_group'],
+				($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
+				$result['ip'],
+				date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+				isset($address_info['company']) ? $address_info['company'] : '',
+				isset($address_info['address_1']) ? $address_info['address_1'] : '',
+				isset($address_info['address_2']) ? $address_info['address_2'] : '',
+				isset($address_info['city']) ? $address_info['city'] : '',
+				isset($address_info['postcode']) ? $address_info['postcode'] : '',
+				isset($address_info['country']) ? $address_info['country'] : '',
+				isset($address_info['zone']) ? $address_info['zone'] : ''
+			));
+		}
+
+		fclose($output);
+		exit();
+	}
+
 	public function index() {
 		$this->load->language('customer/customer');
 
@@ -36,6 +164,10 @@ class ControllerCustomerCustomer extends Controller {
 
 			if (isset($this->request->get['filter_customer_group_id'])) {
 				$url .= '&filter_customer_group_id=' . $this->request->get['filter_customer_group_id'];
+			}
+
+			if (isset($this->request->get['filter_telephone'])) {
+				$url .= '&filter_telephone=' . urlencode(html_entity_decode($this->request->get['filter_telephone'], ENT_QUOTES, 'UTF-8'));
 			}
 
 			if (isset($this->request->get['filter_status'])) {
@@ -92,6 +224,10 @@ class ControllerCustomerCustomer extends Controller {
 
 			if (isset($this->request->get['filter_customer_group_id'])) {
 				$url .= '&filter_customer_group_id=' . $this->request->get['filter_customer_group_id'];
+			}
+
+			if (isset($this->request->get['filter_telephone'])) {
+				$url .= '&filter_telephone=' . urlencode(html_entity_decode($this->request->get['filter_telephone'], ENT_QUOTES, 'UTF-8'));
 			}
 
 			if (isset($this->request->get['filter_status'])) {
@@ -152,6 +288,10 @@ class ControllerCustomerCustomer extends Controller {
 				$url .= '&filter_customer_group_id=' . $this->request->get['filter_customer_group_id'];
 			}
 
+			if (isset($this->request->get['filter_telephone'])) {
+				$url .= '&filter_telephone=' . urlencode(html_entity_decode($this->request->get['filter_telephone'], ENT_QUOTES, 'UTF-8'));
+			}
+
 			if (isset($this->request->get['filter_status'])) {
 				$url .= '&filter_status=' . $this->request->get['filter_status'];
 			}
@@ -206,6 +346,10 @@ class ControllerCustomerCustomer extends Controller {
 
 			if (isset($this->request->get['filter_customer_group_id'])) {
 				$url .= '&filter_customer_group_id=' . $this->request->get['filter_customer_group_id'];
+			}
+
+			if (isset($this->request->get['filter_telephone'])) {
+				$url .= '&filter_telephone=' . urlencode(html_entity_decode($this->request->get['filter_telephone'], ENT_QUOTES, 'UTF-8'));
 			}
 
 			if (isset($this->request->get['filter_status'])) {
@@ -312,6 +456,10 @@ class ControllerCustomerCustomer extends Controller {
 			$url .= '&filter_customer_group_id=' . $this->request->get['filter_customer_group_id'];
 		}
 
+		if (isset($this->request->get['filter_telephone'])) {
+			$url .= '&filter_telephone=' . urlencode(html_entity_decode($this->request->get['filter_telephone'], ENT_QUOTES, 'UTF-8'));
+		}
+
 		if (isset($this->request->get['filter_status'])) {
 			$url .= '&filter_status=' . $this->request->get['filter_status'];
 		}
@@ -402,6 +550,7 @@ class ControllerCustomerCustomer extends Controller {
 				'customer_id'    => $result['customer_id'],
 				'name'           => $result['name'],
 				'email'          => $result['email'],
+				'telephone'      => $result['telephone'],
 				'customer_group' => $result['customer_group'],
 				'status'         => ($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
 				'ip'             => $result['ip'],
@@ -448,6 +597,10 @@ class ControllerCustomerCustomer extends Controller {
 			$url .= '&filter_customer_group_id=' . $this->request->get['filter_customer_group_id'];
 		}
 
+		if (isset($this->request->get['filter_telephone'])) {
+			$url .= '&filter_telephone=' . urlencode(html_entity_decode($this->request->get['filter_telephone'], ENT_QUOTES, 'UTF-8'));
+		}
+
 		if (isset($this->request->get['filter_status'])) {
 			$url .= '&filter_status=' . $this->request->get['filter_status'];
 		}
@@ -472,6 +625,7 @@ class ControllerCustomerCustomer extends Controller {
 
 		$data['sort_name'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=name' . $url, true);
 		$data['sort_email'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=c.email' . $url, true);
+		$data['sort_telephone'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=c.telephone' . $url, true);
 		$data['sort_customer_group'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=customer_group' . $url, true);
 		$data['sort_status'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=c.status' . $url, true);
 		$data['sort_ip'] = $this->url->link('customer/customer', 'user_token=' . $this->session->data['user_token'] . '&sort=c.ip' . $url, true);
@@ -489,6 +643,10 @@ class ControllerCustomerCustomer extends Controller {
 
 		if (isset($this->request->get['filter_customer_group_id'])) {
 			$url .= '&filter_customer_group_id=' . $this->request->get['filter_customer_group_id'];
+		}
+
+		if (isset($this->request->get['filter_telephone'])) {
+			$url .= '&filter_telephone=' . urlencode(html_entity_decode($this->request->get['filter_telephone'], ENT_QUOTES, 'UTF-8'));
 		}
 
 		if (isset($this->request->get['filter_status'])) {
@@ -523,6 +681,7 @@ class ControllerCustomerCustomer extends Controller {
 
 		$data['filter_name'] = $filter_name;
 		$data['filter_email'] = $filter_email;
+		$data['filter_telephone'] = $filter_telephone;
 		$data['filter_customer_group_id'] = $filter_customer_group_id;
 		$data['filter_status'] = $filter_status;
 		$data['filter_ip'] = $filter_ip;
