@@ -85,24 +85,44 @@ class ControllerCustomerCustomer extends Controller {
 		$output = fopen('php://output', 'w');
 
 		fputcsv($output, array(
-			$this->language->get('column_name'),
+			$this->language->get('column_customer_id'),
+			$this->language->get('column_firstname'),
+			$this->language->get('column_lastname'),
 			$this->language->get('column_email'),
 			$this->language->get('column_telephone'),
 			$this->language->get('column_customer_group'),
 			$this->language->get('column_status'),
 			$this->language->get('column_ip'),
-			$this->language->get('column_date_added')
+			$this->language->get('column_date_added'),
+			$this->language->get('column_company'),
+			$this->language->get('column_address_1'),
+			$this->language->get('column_address_2'),
+			$this->language->get('column_city'),
+			$this->language->get('column_postcode'),
+			$this->language->get('column_country'),
+			$this->language->get('column_zone')
 		));
 
 		foreach ($results as $result) {
+			$address_info = $this->model_customer_customer->getAddress($result['address_id']);
+
 			fputcsv($output, array(
-				$result['name'],
+				$result['customer_id'],
+				$result['firstname'],
+				$result['lastname'],
 				$result['email'],
 				"\t" . $result['telephone'],
 				$result['customer_group'],
 				($result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled')),
 				$result['ip'],
-				date($this->language->get('date_format_short'), strtotime($result['date_added']))
+				date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+				isset($address_info['company']) ? $address_info['company'] : '',
+				isset($address_info['address_1']) ? $address_info['address_1'] : '',
+				isset($address_info['address_2']) ? $address_info['address_2'] : '',
+				isset($address_info['city']) ? $address_info['city'] : '',
+				isset($address_info['postcode']) ? $address_info['postcode'] : '',
+				isset($address_info['country']) ? $address_info['country'] : '',
+				isset($address_info['zone']) ? $address_info['zone'] : ''
 			));
 		}
 

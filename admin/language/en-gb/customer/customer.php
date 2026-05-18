@@ -41,6 +41,16 @@ $_['column_points']             = 'Points';
 $_['column_ip']                 = 'IP';
 $_['column_total']              = 'Total Accounts';
 $_['column_telephone']          = 'Telephone';
+$_['column_customer_id']        = 'Customer ID';
+$_['column_firstname']          = 'First Name';
+$_['column_lastname']           = 'Last Name';
+$_['column_company']            = 'Company';
+$_['column_address_1']          = 'Address 1';
+$_['column_address_2']          = 'Address 2';
+$_['column_city']               = 'City';
+$_['column_postcode']           = 'Postcode';
+$_['column_country']            = 'Country';
+$_['column_zone']               = 'Region / State';
 $_['column_action']             = 'Action';
 
 // Entry
