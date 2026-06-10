@@ -254,8 +254,69 @@ class ModelExtensionModuleInventoryModuleInventory extends Model {
         } else {
             $sql .= " ASC";
         }
+
+        if (isset($data['start']) || isset($data['limit'])) {
+            if ($data['start'] < 0) {
+                $data['start'] = 0;
+            }
+
+            if ($data['limit'] < 1) {
+                $data['limit'] = 20;
+            }
+
+            $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+        }
     
         $query = $this->db->query($sql);
+        return $query->rows;
+    }
+
+    public function getTotalInventoryDetails($inventory_id) {
+        $query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "inventory_details WHERE inventory_id = '" . (int)$inventory_id . "'");
+
+        return $query->row['total'];
+    }
+
+    public function getInventoryTotals($inventory_id) {
+        // Query 1: Get totals from inventory_details directly
+        $query1 = $this->db->query("SELECT
+            SUM(quantity) AS total_qty,
+            SUM(damage_quantity) AS total_damage_qty,
+            SUM(current_quantity) AS total_current_qty,
+            SUM(purchase_price) AS total_purchase,
+            SUM(additional_cost) AS total_additional,
+            SUM(total_price) AS total_price,
+            SUM(sale_price) AS total_sale
+        FROM " . DB_PREFIX . "inventory_details
+        WHERE inventory_id = '" . (int)$inventory_id . "'");
+
+        $totals = $query1->row;
+
+        // Query 2: Get aggregated order data for all items in this lot
+        $query2 = $this->db->query("SELECT
+            SUM(CASE WHEN o.order_status_id = 1 THEN op.quantity ELSE 0 END) AS total_pending_qty,
+            SUM(CASE WHEN o.order_status_id = 15 THEN op.quantity ELSE 0 END) AS total_accepted_qty,
+            SUM(CASE WHEN o.order_status_id = 2 THEN op.quantity ELSE 0 END) AS total_in_process_qty,
+            SUM(CASE WHEN o.order_status_id = 3 THEN op.quantity ELSE 0 END) AS total_picked_up_qty,
+            SUM(CASE WHEN o.order_status_id = 5 THEN op.quantity ELSE 0 END) AS total_sold_qty,
+            SUM(CASE WHEN o.order_status_id = 11 THEN op.quantity ELSE 0 END) AS total_returned_qty,
+            SUM(CASE WHEN o.order_status_id = 8 THEN op.quantity ELSE 0 END) AS total_hold_by_customer_qty,
+            SUM(CASE WHEN o.order_status_id = 7 THEN op.quantity ELSE 0 END) AS total_cancel_qty,
+            SUM(CASE
+                WHEN o.order_status_id = 5
+                THEN (op.total - ((id.purchase_price + id.additional_cost) * op.quantity))
+                ELSE 0
+            END) AS total_profit
+        FROM " . DB_PREFIX . "order_product op
+        INNER JOIN " . DB_PREFIX . "inventory_details id ON (op.lot_id = id.inventory_details_id)
+        INNER JOIN `" . DB_PREFIX . "order` o ON (op.order_id = o.order_id)
+        WHERE id.inventory_id = '" . (int)$inventory_id . "'");
+
+        return array_merge($totals, $query2->row);
+    }
+
+    public function getInventoryProductsOptimized($inventory_id) {
+        $query = $this->db->query("SELECT id.*, pd.name, p.image FROM " . DB_PREFIX . "inventory_details id LEFT JOIN " . DB_PREFIX . "product_description pd ON (id.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product p ON (id.product_id = p.product_id) WHERE id.inventory_id = '" . (int)$inventory_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
         return $query->rows;
     }
 

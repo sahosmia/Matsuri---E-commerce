@@ -259,17 +259,37 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
         $this->load->model('catalog/product');
         $this->load->model('tool/image');
         
-        $products = $this->request->post['products'] ?? (isset($this->request->get['inventory_id']) ? $this->model_extension_module_inventory_module_inventory->getInventoryProducts($this->request->get['inventory_id']) : []);
-     
-        
-        $data['products'] = [];
-        foreach ($products as $product) {
-            $product_info = $this->model_catalog_product->getProduct($product['product_id']);
-            if ($product_info) {
+        if (isset($this->request->post['products'])) {
+            $products = $this->request->post['products'];
+
+            $data['products'] = [];
+            foreach ($products as $product) {
+                $product_info = $this->model_catalog_product->getProduct($product['product_id']);
+                if ($product_info) {
+                    $data['products'][] = [
+                        'product_id'      => $product['product_id'],
+                        'name'            => $product_info['name'],
+                        'image'           => $this->model_tool_image->resize($product_info['image'] ?: 'no_image.png', 40, 40),
+                        'quantity'        => $product['quantity'],
+                        'damage_quantity' => $product['damage_quantity'] ?? 0,
+                        'purchase_price'  => $product['purchase_price'],
+                        'sale_price'      => $product['sale_price'],
+                        'additional_cost' => $product['additional_cost'],
+                        'total_price'     => $product['total_price'],
+                        'remarks'         => $product['remarks'] ?? '',
+                        'is_merge_lot_quantity_to_main' => $product['is_merge_lot_quantity_to_main'],
+                    ];
+                }
+            }
+        } elseif (isset($this->request->get['inventory_id'])) {
+            $products = $this->model_extension_module_inventory_module_inventory->getInventoryProductsOptimized($this->request->get['inventory_id']);
+
+            $data['products'] = [];
+            foreach ($products as $product) {
                 $data['products'][] = [
                     'product_id'      => $product['product_id'],
-                    'name'            => $product_info['name'],
-                    'image'           => $this->model_tool_image->resize($product_info['image'] ?: 'no_image.png', 40, 40),
+                    'name'            => $product['name'],
+                    'image'           => $this->model_tool_image->resize($product['image'] ?: 'no_image.png', 40, 40),
                     'quantity'        => $product['quantity'],
                     'damage_quantity' => $product['damage_quantity'] ?? 0,
                     'purchase_price'  => $product['purchase_price'],
@@ -280,6 +300,8 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
                     'is_merge_lot_quantity_to_main' => $product['is_merge_lot_quantity_to_main'],
                 ];
             }
+        } else {
+            $data['products'] = [];
         }
 
         // --- Error Display Logic ---
@@ -417,16 +439,27 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
         $inventory_id = (int)($this->request->get['inventory_id'] ?? 0);
         $sort = $this->request->get['sort'] ?? 'product_name';
         $order = $this->request->get['order'] ?? 'ASC';
+        $page = $this->request->get['page'] ?? 1;
+        $limit = 150;
         
         $url = '&inventory_id=' . $inventory_id;
+        
+        if (isset($this->request->get['sort'])) {
+            $url .= '&sort=' . $this->request->get['sort'];
+        }
+
+        if (isset($this->request->get['order'])) {
+            $url .= '&order=' . $this->request->get['order'];
+        }
+
+        $url_base = '&inventory_id=' . $inventory_id;
         $new_order = ($order == 'ASC') ? 'DESC' : 'ASC';
         
-        
-        $data['sort_name']     = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url . '&sort=product_name&order=' . $new_order, true);
-        $data['sort_qty']      = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url . '&sort=id.quantity&order=' . $new_order, true);
-        $data['sort_current']  = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url . '&sort=id.current_quantity&order=' . $new_order, true);
-        $data['sort_sale']     = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url . '&sort=id.sale_price&order=' . $new_order, true);
-        $data['sort_profit']   = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url . '&sort=total_profit&order=' . $new_order, true);
+        $data['sort_name']     = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url_base . '&sort=product_name&order=' . $new_order, true);
+        $data['sort_qty']      = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url_base . '&sort=id.quantity&order=' . $new_order, true);
+        $data['sort_current']  = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url_base . '&sort=id.current_quantity&order=' . $new_order, true);
+        $data['sort_sale']     = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url_base . '&sort=id.sale_price&order=' . $new_order, true);
+        $data['sort_profit']   = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url_base . '&sort=total_profit&order=' . $new_order, true);
     
         $data['sort'] = $sort;
         $data['order'] = $order;
@@ -454,46 +487,19 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
             $data['status_class'] = $status_class;
         
             $data['products'] = array();
-            $filter_data = array('sort' => $sort, 'order' => $order);
-            $results = $this->model_extension_module_inventory_module_inventory->getInventoryDetails($inventory_id, $filter_data);
-          
-            $total_qty = 0;
-            $total_damage_qty = 0;
-            $total_current_qty = 0;
-            $total_purchase = 0;
-            $total_additional = 0;
-            $total_price = 0;
-            $total_sale = 0;
-            $total_profit = 0;
             
-            $total_sold_qty = 0;
-            $total_pending_qty = 0;
-            $total_accepted_qty = 0;
-            $total_in_process_qty = 0;
-            $total_picked_up_qty = 0;
-            $total_returned_qty = 0;
-            $total_hold_qty = 0;
-            $total_cancel_qty = 0;
-        
+            $filter_data = array(
+                'sort'  => $sort,
+                'order' => $order,
+                'start' => ($page - 1) * $limit,
+                'limit' => $limit
+            );
+
+            $results = $this->model_extension_module_inventory_module_inventory->getInventoryDetails($inventory_id, $filter_data);
+            $inventory_details_total = $this->model_extension_module_inventory_module_inventory->getTotalInventoryDetails($inventory_id);
+            $inventory_totals = $this->model_extension_module_inventory_module_inventory->getInventoryTotals($inventory_id);
+
             foreach ($results as $result) {
-                $total_qty += $result['quantity'];
-                $total_damage_qty += $result['damage_quantity'];
-                $total_current_qty += $result['current_quantity'];
-                $total_purchase += $result['purchase_price'];
-                $total_additional += $result['additional_cost'];
-                $total_price += $result['total_price'];
-                $total_sale += $result['sale_price'];
-                $total_profit += $result['total_profit'];
-        
-                $total_pending_qty += $result['total_pending_qty'];
-                $total_accepted_qty += $result['total_accepted_qty'];
-                $total_in_process_qty += $result['total_in_process_qty'];
-                $total_picked_up_qty += $result['total_picked_up_qty'];
-                $total_sold_qty += $result['total_sold_qty'];
-                $total_returned_qty += $result['total_returned_qty'];
-                $total_hold_qty += $result['total_hold_by_customer_qty'];
-                $total_cancel_qty += $result['total_cancel_qty'];
-        
                 $data['products'][] = array(
                     'product_id'        => $result['product_id'],
                     'name'              => $result['product_name'], 
@@ -521,23 +527,34 @@ class ControllerExtensionModuleInventoryModuleInventory extends Controller {
                 );
             }
             
-            $data['total_qty'] = $total_qty;
-            $data['total_damage_qty'] = $total_damage_qty;
-            $data['total_current_qty'] = $total_current_qty;
-            $data['total_pending_qty'] = $total_pending_qty;
-            $data['total_accepted_qty'] = $total_accepted_qty;
-            $data['total_in_process_qty'] = $total_in_process_qty;
-            $data['total_picked_up_qty'] = $total_picked_up_qty;
-            $data['total_sold_qty'] = $total_sold_qty;
-            $data['total_returned_qty'] = $total_returned_qty;
-            $data['total_hold_qty'] = $total_hold_qty;
-            $data['total_cancel_qty'] = $total_cancel_qty;
+            $data['total_qty'] = $inventory_totals['total_qty'];
+            $data['total_damage_qty'] = $inventory_totals['total_damage_qty'];
+            $data['total_current_qty'] = $inventory_totals['total_current_qty'];
+            $data['total_pending_qty'] = $inventory_totals['total_pending_qty'];
+            $data['total_accepted_qty'] = $inventory_totals['total_accepted_qty'];
+            $data['total_in_process_qty'] = $inventory_totals['total_in_process_qty'];
+            $data['total_picked_up_qty'] = $inventory_totals['total_picked_up_qty'];
+            $data['total_sold_qty'] = $inventory_totals['total_sold_qty'];
+            $data['total_returned_qty'] = $inventory_totals['total_returned_qty'];
+            $data['total_hold_qty'] = $inventory_totals['total_hold_by_customer_qty'];
+            $data['total_cancel_qty'] = $inventory_totals['total_cancel_qty'];
             
-            $data['total_sale'] = $this->currency->format($total_sale, $this->config->get('config_currency'));
-            $data['total_purchase'] = $this->currency->format($total_purchase, $this->config->get('config_currency'));
-            $data['total_additional'] = $this->currency->format($total_additional, $this->config->get('config_currency'));
-            $data['total_price'] = $this->currency->format($total_price, $this->config->get('config_currency'));
-            $data['total_profit'] = $this->currency->format($total_profit, $this->config->get('config_currency'));
+            $data['total_sale'] = $this->currency->format($inventory_totals['total_sale'], $this->config->get('config_currency'));
+            $data['total_purchase'] = $this->currency->format($inventory_totals['total_purchase'], $this->config->get('config_currency'));
+            $data['total_additional'] = $this->currency->format($inventory_totals['total_additional'], $this->config->get('config_currency'));
+            $data['total_price'] = $this->currency->format($inventory_totals['total_price'], $this->config->get('config_currency'));
+            $data['total_profit'] = $this->currency->format($inventory_totals['total_profit'], $this->config->get('config_currency'));
+
+            // Pagination
+            $pagination = new Pagination();
+            $pagination->total = $inventory_details_total;
+            $pagination->page = $page;
+            $pagination->limit = $limit;
+            $pagination->url = $this->url->link('extension/module/inventory_module/inventory/view', 'user_token=' . $this->session->data['user_token'] . $url_base . '&sort=' . $sort . '&order=' . $order . '&page={page}', true);
+
+            $data['pagination'] = $pagination->render();
+
+            $data['results'] = sprintf($this->language->get('text_pagination'), ($inventory_details_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($inventory_details_total - $limit)) ? $inventory_details_total : ((($page - 1) * $limit) + $limit), $inventory_details_total, ceil($inventory_details_total / $limit));
         
             if (isset($this->session->data['success'])) {
                 $data['success'] = $this->session->data['success'];
